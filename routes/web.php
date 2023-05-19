@@ -26,3 +26,7 @@ Route::post('store-user', [AuthController::class , 'storeUser'])->name('storeUse
 Route::middleware('auth')->group(function (){
     Route::get('dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard');
 }); 
+
+Route::get('test', function (){
+    return view('test');
+});

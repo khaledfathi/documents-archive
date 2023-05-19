@@ -12,8 +12,9 @@ class AuthController extends Controller
         return view('auth.login'); 
     }
     public function auth(Request $request){
-        if ( Auth::attempt(['name'=>$request->login , 'password'=>$request->password]) || 
-            Auth::attempt(['email'=>$request->login , 'password'=>$request->password])){
+        
+        if ( Auth::attempt(['name'=>$request->login , 'password'=>$request->password] , ($request->remember)?true:false) || 
+            Auth::attempt(['email'=>$request->login , 'password'=>$request->password] , ($request->remember)?true:false)){
                 return redirect(route('dashboard')); 
             }
         return back(); 
