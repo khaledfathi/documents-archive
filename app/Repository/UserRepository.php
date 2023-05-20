@@ -9,4 +9,8 @@ class UserRepository implements UserRepositoryContracts {
     {
         return UserModel::get(); 
     }
+    public function store(array $data):object
+    {
+        return UserModel::create($data);
+    }
 }

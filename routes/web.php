@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +21,18 @@ Route::get('login' , [AuthController::class , 'login'])->name('login')->middlewa
 Route::get('register' , [AuthController::class , 'register'])->name('register')->middleware('guest');
 Route::post('login' , [AuthController::class , 'auth'])->name('login.auth');
 Route::get('logout', [AuthController::class , 'logout'])->name('logout'); 
-Route::post('store-user', [AuthController::class , 'storeUser'])->name('storeUser'); 
+Route::post('store-user', [UserController::class , 'storeUser'])->name('storeUser'); 
 
 
 Route::middleware('auth')->group(function (){
+    //dashboard
     Route::get('dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard');
+
+    //cp [control panel]
+    Route::group(['prefix'=>'cp' ] , function (){
+        Route::get('users' , [UserController::class , 'indexUser'])->name('users');
+        Route::get('user/create' , [UserController::class , 'createUser'])->name('createUser');
+    }); 
 }); 
 
 Route::get('test', function (){

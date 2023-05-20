@@ -75,7 +75,7 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ $userImage }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ (auth()->user()->image) ? asset(auth()->user()->image) : asset(DEFAULT_USER_IMAGE)  }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ auth()->user()->name }}</a>
@@ -113,7 +113,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
+                                    <a href="{{route('dashboard')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All</p>
                                     </a>
@@ -271,7 +271,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
+                                    <a href="{{route('users')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Users</p>
                                     </a>
@@ -310,14 +310,10 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Dashboard</h1>
+                            <h1>@yield('sectionName')</h1>
                         </div>
                         <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
-                                <li class="breadcrumb-item active">All</li>
-                            </ol>
+                            @yield('path')
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->

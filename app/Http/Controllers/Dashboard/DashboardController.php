@@ -16,8 +16,6 @@ class DashboardController extends Controller
         $this->userProvider = $userProvider; 
     }
     public function dashboard(){
-        $userImage=(auth()->user()->image); 
-        ($userImage) ? null : $userImage= "assets/image/svg/default_user_logo.svg";
-        return view('layout.main', ['userImage'=>$userImage]);
+        return view('dashboard.all');
     }
 }
