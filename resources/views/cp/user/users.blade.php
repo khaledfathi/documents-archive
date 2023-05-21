@@ -49,6 +49,10 @@
                                     </th>
                                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
+                                       Type 
+                                    </th>
+                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending">
                                         View
                                     </th>
                                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
@@ -67,6 +71,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>image</td>
                                         <td>{{ $user->email }}</td>
+                                        <td>Type</td>
                                         <td>View</td>
                                         <td>Edit</td>
                                         <td>Delete</td>

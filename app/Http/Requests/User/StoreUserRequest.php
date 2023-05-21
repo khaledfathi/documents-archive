@@ -24,7 +24,8 @@ class StoreUserRequest extends FormRequest
         return [
             'name'=>'required|unique:users', 
             'email'=>'required|unique:users',
-            'password'=>'required|confirmed|min:8'
+            'password'=>'required|confirmed|min:8',
+            'image'=>'nullable|mimes:jpg,jpeg,png,webp,bmp,tiff'
         ];
     }
 }
