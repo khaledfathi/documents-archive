@@ -13,4 +13,9 @@ class UserRepository implements UserRepositoryContracts {
     {
         return UserModel::create($data);
     }
+    public function destroy(int $id):bool 
+    {
+        $found = UserModel::find($id); 
+        return ($found) ? $found->delete() : false ; 
+    }
 }

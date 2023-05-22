@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CP\User\UserController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/' , fn()=>redirect(route('login')))->name('root'); 
 Route::get('login' , [AuthController::class , 'login'])->name('login')->middleware('guest');
 Route::post('login' , [AuthController::class , 'auth'])->name('login.auth');
-Route::get('logout', [AuthController::class , 'logout'])->name('logout'); 
-
+Route::get('logout', [AuthController::class , 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function (){
     //dashboard
@@ -28,10 +28,15 @@ Route::middleware('auth')->group(function (){
 
     //cp [control panel]
     Route::group(['prefix'=>'cp' ] , function (){
-        Route::get('users' , [UserController::class , 'indexUser'])->name('users');
-        Route::get('user/create' , [UserController::class , 'createUser'])->name('createUser');
-        Route::post('store-user', [UserController::class , 'storeUser'])->name('storeUser'); 
-    }); 
+        //users
+        Route::group(['prefix'=>'user'] , function (){
+            Route::get('index' , [UserController::class , 'indexUser'])->name('users');
+            Route::get('create' , [UserController::class , 'createUser'])->name('createUser');
+            Route::post('store', [UserController::class , 'storeUser'])->name('storeUser'); 
+            Route::get('destroy/{id}', [UserController::class , 'destroyUser'])->name('destroyUser'); 
+            Route::get('edit/{id}', [UserController::class , 'editUser'])->name('editUser'); 
+        }); 
+   }); 
 }); 
 
 Route::get('test', function (){

@@ -22,6 +22,15 @@
             <h3 class="card-title">Users Table</h3>
         </div>
         <!-- /.card-header -->
+
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible text-center">
+                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                {{$errors->first()}}
+            </div>
+        @endif
+        {{-- / Error message  --}}
+
         <div class="card-body">
             <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4 overflow-auto">
                 <div class="row">
@@ -49,7 +58,7 @@
                                     </th>
                                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
-                                       Type 
+                                        Type
                                     </th>
                                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
@@ -69,12 +78,24 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td>{{ $user->name }}</td>
-                                        <td>image</td>
+                                        <td>
+                                            @if ($user->image)
+                                                <img src="{{ asset($user->image) }}" alt="" width="50">
+                                            @endif
+                                        </td>
                                         <td>{{ $user->email }}</td>
                                         <td>Type</td>
                                         <td>View</td>
-                                        <td>Edit</td>
-                                        <td>Delete</td>
+                                        <td>
+                                            <a href="{{ route('editUser', ['id' => $user->id]) }}">
+                                                <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('destroyUser', ['id' => $user->id]) }}">
+                                                <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
