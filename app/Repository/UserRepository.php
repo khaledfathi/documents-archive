@@ -5,8 +5,11 @@ use App\Models\User as UserModel;
 use App\Repository\Contracts\UserRepositoryContracts;
 
 class UserRepository implements UserRepositoryContracts {
-    public function index ():object
+    public function index(int $paginate=null):object
     {
+        if ($paginate){
+            return UserModel::paginate($paginate); 
+        }
         return UserModel::get(); 
     }
     public function store(array $data):object
@@ -17,5 +20,9 @@ class UserRepository implements UserRepositoryContracts {
     {
         $found = UserModel::find($id); 
         return ($found) ? $found->delete() : false ; 
+    }
+    public function show(int $id): object | null 
+    {
+        return UserModel::where('id' , $id)->first(); 
     }
 }

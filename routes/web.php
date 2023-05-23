@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function (){
             Route::post('store', [UserController::class , 'storeUser'])->name('storeUser'); 
             Route::get('destroy/{id}', [UserController::class , 'destroyUser'])->name('destroyUser'); 
             Route::get('edit/{id}', [UserController::class , 'editUser'])->name('editUser'); 
+            Route::post('update', [UserController::class , 'updateUser'])->name('updateUser'); 
         }); 
    }); 
 }); 

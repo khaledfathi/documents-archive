@@ -27,7 +27,7 @@ class UserController extends Controller
     }
     //public 
     public function indexUser(){
-        $users = $this->userProvider->index(); 
+        $users = $this->userProvider->index(15); 
         return view('cp.user.users' ,['users'=>$users]); 
     }
     public function storeUser(StoreUserRequest $request)
@@ -40,7 +40,7 @@ class UserController extends Controller
             $imageFile = $request->file('image');
             $fileName= random_int(0,999).'_'.time().'.'.$imageFile->getClientOriginalExtension(); 
             $imageFile->storeAs('upload', $fileName ,'public');
-            $data['image']= 'storage/upload/'.$fileName;
+            $data['image']= $fileName;
         }
         $data['password']= Hash::make($request->password); 
         $this->userProvider->store($data); 
@@ -52,9 +52,24 @@ class UserController extends Controller
     }
     public function destroyUser(Request $request){
         if (auth()->user()->id == $request->id){
-            return redirect(route('users'))->withErrors('you can\'t delete your account !'); 
+            return back()->withErrors('you can\'t delete your account !'); 
         }
-        $this->userProvider->destroy($request->id); 
+        $record = $this->userProvider->show($request->id);
+        if ($record){
+            //remove user image
+            Storage::disk('public')->delete('upload/'.$record->image); 
+        }
+        $this->userProvider->destroy($request->id);
+        // return redirect(route('users')); 
+        return back(); 
+    }
+    public function editUser(Request $request){
+        $userTypes= UserType::cases(); 
+        $record = $this->userProvider->show($request->id); 
+        return view('cp.user.editUser', ['userTypes'=>$userTypes , 'user'=>$record]); 
+    }
+    public function updateUser(Request $request){
+        //update
         return redirect(route('users')); 
     }
 }
