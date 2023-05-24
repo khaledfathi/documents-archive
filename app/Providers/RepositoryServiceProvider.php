@@ -6,10 +6,13 @@ use App\Repository\Contracts\UserRepositoryContracts;
 use App\Repository\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Handle database as a Repositories 
+ */
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
-     * Register services.
+     * Register services. 
      */
     public function register(): void
     {

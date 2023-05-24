@@ -8,9 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    /**
+     * login page 
+     * @return mixed view Login page
+     */
     public function login(){
         return view('auth.login'); 
     }
+    /**
+     * authenticate login
+     * @param Request $request request credential 
+     * @return mixed back to previous page
+     */
     public function auth(Request $request){
         
         if ( Auth::attempt(['name'=>$request->login , 'password'=>$request->password] , ($request->remember)?true:false) || 
@@ -19,6 +28,10 @@ class AuthController extends Controller
             }
         return back(); 
     }
+    /**
+     * Logout 
+     * @return mixed redirect to login page - route('login')
+     */
     public function logout(){
         Auth::logout(); 
         return redirect(route('login')); 

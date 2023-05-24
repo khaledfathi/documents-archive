@@ -4,6 +4,10 @@ namespace App\Repository;
 use App\Models\User as UserModel;
 use App\Repository\Contracts\UserRepositoryContracts;
 
+/**
+ * UserRepository Class 
+ * Repository handle CRUD operation on 'users' table in database 
+ */
 class UserRepository implements UserRepositoryContracts {
     public function index(int $paginate=null):object
     {
