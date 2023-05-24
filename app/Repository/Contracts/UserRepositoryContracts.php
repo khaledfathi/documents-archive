@@ -13,7 +13,7 @@ interface UserRepositoryContracts {
     public function index(int $paginate=null):object;
     /**
      * store new user
-     * @param array $data associative array , each key must be identical to one of user's table field name
+     * @param array $data associative array , each key must be identical to name of field 
      * @return object Eloquent Object contains the new user that has been stored 
      */
     public function store(array $data):object;  
@@ -29,4 +29,11 @@ interface UserRepositoryContracts {
      * @return object|null Eloquent Object if user got found | null 
      */
     public function show(int $id): object | null ;
+    /**
+     * update user by id 
+     * @param array $data associative array to update record , each key must be identical to name of field  
+     * @param int $id user id that will be updated 
+     * @return bool true for succsess | false for failed
+     */
+    public function update(array $data , int $id ):bool ; 
 }

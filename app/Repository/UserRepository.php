@@ -29,4 +29,9 @@ class UserRepository implements UserRepositoryContracts {
     {
         return UserModel::where('id' , $id)->first(); 
     }
+    public function update(array $data , int $id ):bool 
+    {
+        $found = UserModel::find($id); 
+        return ($found)?$found->update($data):false ; 
+    } 
 }

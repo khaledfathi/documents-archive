@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CP\User\UserController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -37,9 +39,13 @@ Route::middleware('auth')->group(function (){
             Route::get('edit/{id}', [UserController::class , 'editUser'])->name('editUser'); 
             Route::post('update', [UserController::class , 'updateUser'])->name('updateUser'); 
         }); 
+        //about
+        Route::get('about' , [AboutController::class , 'about'])->name('about');
    }); 
+   //profile 
+   Route::get('profile', [ProfileController::class , 'profile'])->name('profile'); 
 }); 
 
 Route::get('test', function (){
-    return view('test');
+    return "experimintal";
 });

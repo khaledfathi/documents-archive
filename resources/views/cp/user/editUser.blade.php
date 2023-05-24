@@ -38,6 +38,8 @@
         <!-- form start -->
         <form action="{{ route('updateUser') }}" method="post" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="id" value="{{($user)?$user->id:null}}"> {{--user id--}}
+            <input type="hidden" name="lastPaginationLink" value="{{($lastPaginationLink)?$lastPaginationLink:null}}"> {{--pagination - page number --}}
             <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">User name</label>

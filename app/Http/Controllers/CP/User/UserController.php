@@ -5,6 +5,7 @@ namespace App\Http\Controllers\CP\User;
 use App\Enum\User\UserType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\User\UpdateUserRequest;
 use App\Repository\Contracts\UserRepositoryContracts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -34,7 +35,7 @@ class UserController extends Controller
         if ($recordId){
             //delete old image 
             $oldImageFileName = $this->userProvider->show($recordId)->image; 
-            Storage::disk('pubic')->delete('upload/'.$oldImageFileName); 
+            Storage::disk('public')->delete('upload/'.$oldImageFileName); 
         }
         //store new image
         $fileName= random_int(0,999).'_'.time().'.'.$imageFile->getClientOriginalExtension(); 
@@ -100,17 +101,41 @@ class UserController extends Controller
      * @return mixed view edit page
      */
     public function editUser(Request $request){
+        //current pagination value
+        $lastPaginationLink = session()->previousUrl(); 
+
         $userTypes= UserType::cases(); 
         $record = $this->userProvider->show($request->id); 
-        return view('cp.user.editUser', ['userTypes'=>$userTypes , 'user'=>$record]); 
+        return view('cp.user.editUser', [
+            'userTypes'=>$userTypes , 
+            'user'=>$record,
+            'lastPaginationLink'=> $lastPaginationLink 
+            ]); 
     }
     /**
      * update user by id 
      * @param Request $request request - to get user id that will be update
      * @return mixed back to previous page 
      */
-    public function updateUser(Request $request){
-        //update
-        return back(); 
+    public function updateUser(UpdateUserRequest $request){
+        $data=[
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'type'=> $request->type
+        ];
+        //image
+        if ($request->has('image')){
+            //delete old image and upload new one 
+            $data['image'] = $this->uploadImage($request->file('image') , $request->id);  
+        }
+        if (!empty($request->password)){//if there's a password
+            $data['password']=Hash::make($request->password); 
+        }
+        //update record 
+        $this->userProvider->update($data , $request->id); 
+
+        //lastPaginationLink is a double back 
+        //because of this edit was redirected from the specific user page in pagination
+        return redirect($request->lastPaginationLink); 
     }
 }

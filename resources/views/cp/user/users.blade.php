@@ -7,7 +7,7 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item active">Control Panel</li>
-        <li class="breadcrumb-item active">Users</li>
+        <li class="breadcrumb-item active"><a href="{{route('users')}}">Users</a></li>
     </ol>
 @endsection
 
@@ -44,33 +44,29 @@
                             aria-describedby="example2_info" style="min-width:700px">
                             <thead>
                                 <tr>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                    <th class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
                                         User Name
                                     </th>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                    <th class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
                                         Image
                                     </th>
 
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                    <th class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
                                         Email
                                     </th>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                    <th class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
                                         Type
                                     </th>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                        colspan="1" aria-sort="ascending">
-                                        View
-                                    </th>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                    <th width="5%"class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
                                         Edit
                                     </th>
                                     </th>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                    <th width="5%" class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending">
                                         Delete
                                 </tr>
@@ -78,21 +74,20 @@
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr>
-                                        <td>{{ $user->name }}</td>
-                                        <td>
+                                        <td class="align-middle text-center">{{ $user->name }}</td>
+                                        <td class="align-middle text-center">
                                             @if ($user->image)
                                                 <img src="{{ asset('storage/upload/'.$user->image)  }}" alt="" width="50">
                                             @endif
                                         </td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>Type</td>
-                                        <td>View</td>
-                                        <td>
+                                        <td class="align-middle text-center">{{ $user->email }}</td>
+                                        <td class="align-middle text-center">{{$user->type}}</td>
+                                        <td class="align-middle text-center">
                                             <a href="{{ route('editUser', ['id' => $user->id]) }}">
                                                 <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
                                             </a>
                                         </td>
-                                        <td>
+                                        <td class="align-middle text-center">
                                             <a href="{{ route('destroyUser', ['id' => $user->id]) }}">
                                                 <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
                                             </a>

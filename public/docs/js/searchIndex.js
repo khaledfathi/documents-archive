@@ -6,6 +6,21 @@ Search.appendIndex(
             "summary": "default\u0020user\u0020image\u0020icon\u0020,\u0020if\u0020it\u0020hasn\u0027t\u0020image",
             "url": "namespaces/default.html#constant_DEFAULT_USER_IMAGE"
         },                {
+            "fqsen": "\\App\\Enum\\User\\UserType",
+            "name": "UserType",
+            "summary": "enum\u0020for\u0020User\u0020types\u0020\u005Badmin\u0020\u007C\u0020user\u005D",
+            "url": "classes/App-Enum-User-UserType.html"
+        },                {
+            "fqsen": "\\App\\Enum\\User\\UserType\u003A\u003AADMIN",
+            "name": "ADMIN",
+            "summary": "",
+            "url": ""
+        },                {
+            "fqsen": "\\App\\Enum\\User\\UserType\u003A\u003AUSER",
+            "name": "USER",
+            "summary": "",
+            "url": ""
+        },                {
             "fqsen": "\\App\\Http\\Controllers\\Auth\\AuthController",
             "name": "AuthController",
             "summary": "",
@@ -171,6 +186,11 @@ Search.appendIndex(
             "summary": "get\u0020user\u0020by\u0020id",
             "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html#method_show"
         },                {
+            "fqsen": "\\App\\Repository\\Contracts\\UserRepositoryContracts\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html#method_update"
+        },                {
             "fqsen": "\\App\\Repository\\UserRepository",
             "name": "UserRepository",
             "summary": "UserRepository\u0020Class\nRepository\u0020handle\u0020CRUD\u0020operation\u0020on\u0020\u0027users\u0027\u0020table\u0020in\u0020database",
@@ -196,20 +216,30 @@ Search.appendIndex(
             "summary": "get\u0020user\u0020by\u0020id",
             "url": "classes/App-Repository-UserRepository.html#method_show"
         },                {
-            "fqsen": "\\App\\Enum\\User\\UserType",
-            "name": "UserType",
-            "summary": "enum\u0020for\u0020User\u0020types\u0020\u005Badmin\u0020\u007C\u0020user\u005D",
-            "url": "classes/App-Enum-User-UserType.html"
+            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-UserRepository.html#method_update"
         },                {
-            "fqsen": "\\App\\Enum\\User\\UserType\u003A\u003AADMIN",
-            "name": "ADMIN",
+            "fqsen": "\\App\\Http\\Controllers\\About\\AboutController",
+            "name": "AboutController",
             "summary": "",
-            "url": ""
+            "url": "classes/App-Http-Controllers-About-AboutController.html"
         },                {
-            "fqsen": "\\App\\Enum\\User\\UserType\u003A\u003AUSER",
-            "name": "USER",
+            "fqsen": "\\App\\Http\\Controllers\\About\\AboutController\u003A\u003Aabout\u0028\u0029",
+            "name": "about",
+            "summary": "About\u0020page",
+            "url": "classes/App-Http-Controllers-About-AboutController.html#method_about"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController",
+            "name": "ProfileController",
             "summary": "",
-            "url": ""
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003Aprofile\u0028\u0029",
+            "name": "profile",
+            "summary": "Profile\u0020page",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_profile"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -230,6 +260,11 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\About",
+            "name": "About",
+            "summary": "",
+            "url": "namespaces/app-http-controllers-about.html"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\Auth",
             "name": "Auth",
@@ -260,6 +295,11 @@ Search.appendIndex(
             "name": "Dashboard",
             "summary": "",
             "url": "namespaces/app-http-controllers-dashboard.html"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile",
+            "name": "Profile",
+            "summary": "",
+            "url": "namespaces/app-http-controllers-profile.html"
         },                {
             "fqsen": "\\App\\Http\\Requests\\User",
             "name": "User",

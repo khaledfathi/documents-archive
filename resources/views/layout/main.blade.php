@@ -78,7 +78,7 @@
                         <img src="{{ (auth()->user()->image) ? asset('storage/upload/'.auth()->user()->image) : asset(DEFAULT_USER_IMAGE)  }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+                        <a href="{{route('profile')}}" class="d-block">{{ auth()->user()->name }}</a>
                     </div>
                 </div>
 
@@ -277,7 +277,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
+                                    <a href="{{route('about')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>About</p>
                                     </a>
