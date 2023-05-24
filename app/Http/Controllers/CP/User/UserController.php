@@ -25,14 +25,22 @@ class UserController extends Controller
     //private
     /**
      * handle user's image upload 
-     * @param mixed $image
+     * @param mixed $imageFile image file - get it from request 
+     * @param int $recordId record id , used to delete old image for this record 
      * @return string the image file name 
      */
-    private function uploadImage($image):string 
+    private function uploadImage($imageFile , int $recordId=null):string 
     {
-        //return path of uploaded image file
-        
-        return "Image File Name"; 
+        if ($recordId){
+            //delete old image 
+            $oldImageFileName = $this->userProvider->show($recordId)->image; 
+            Storage::disk('pubic')->delete('upload/'.$oldImageFileName); 
+        }
+        //store new image
+        $fileName= random_int(0,999).'_'.time().'.'.$imageFile->getClientOriginalExtension(); 
+        $imageFile->storeAs('upload', $fileName ,'public');
+        //return the new file name 
+        return $fileName;
     }
     //public 
     /**
@@ -52,13 +60,9 @@ class UserController extends Controller
     {
         //prepare data
         $data = $request->only(['name','email']);
-
-        //save image if exists
+        //save image if exists and append file name to data to be saved in database 
         if ($request->image){
-            $imageFile = $request->file('image');
-            $fileName= random_int(0,999).'_'.time().'.'.$imageFile->getClientOriginalExtension(); 
-            $imageFile->storeAs('upload', $fileName ,'public');
-            $data['image']= $fileName;
+            $data['image']=$this->uploadImage($request->file('image')); 
         }
         $data['password']= Hash::make($request->password); 
         $this->userProvider->store($data); 
@@ -103,10 +107,10 @@ class UserController extends Controller
     /**
      * update user by id 
      * @param Request $request request - to get user id that will be update
-     * @return mixed redirect to users page - route('users')
+     * @return mixed back to previous page 
      */
     public function updateUser(Request $request){
         //update
-        return redirect(route('users')); 
+        return back(); 
     }
 }
