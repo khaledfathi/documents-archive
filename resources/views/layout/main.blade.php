@@ -75,10 +75,11 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ (auth()->user()->image) ? asset('storage/upload/'.auth()->user()->image) : asset(DEFAULT_USER_IMAGE)  }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ auth()->user()->image ? asset('storage/upload/' . auth()->user()->image) : asset(DEFAULT_USER_IMAGE) }}"
+                            class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="{{route('profile')}}" class="d-block">{{ auth()->user()->name }}</a>
+                        <a href="{{ route('profile') }}" class="d-block">{{ auth()->user()->name }}</a>
                     </div>
                 </div>
 
@@ -104,7 +105,7 @@
                         {{-- Dashboard --}}
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-chart-line"></i>
+                                <i class="nav-icon fas fa-chart-line"></i>
                                 {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
                                 <p>
                                     Dashboard
@@ -113,7 +114,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('dashboard')}}" class="nav-link">
+                                    <a href="{{ route('dashboard') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All</p>
                                     </a>
@@ -235,7 +236,7 @@
                         {{-- Backup --}}
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-sd-card"></i>
+                                <i class="nav-icon fas fa-sd-card"></i>
                                 <p>
                                     Backup
                                     <i class="right fas fa-angle-left"></i>
@@ -249,7 +250,7 @@
                                         <p>Export</p>
                                     </a>
                                 </li>
-                                      <li class="nav-item">
+                                <li class="nav-item">
                                     <a href="../../index3.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import</p>
@@ -271,13 +272,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('users')}}" class="nav-link">
+                                    <a href="{{ route('users') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Users</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('about')}}" class="nav-link">
+                                    <a href="{{ route('about') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>About</p>
                                     </a>
@@ -285,6 +286,17 @@
                             </ul>
                         </li>
                         {{-- / Control Panel --}}
+
+                        {{-- My Account --}}
+                        <li class="nav-item">
+                            <a href="{{ route('profile') }}" class="nav-link">
+                                <i class="nav-icon fas fa-user-circle"></i>
+                                <p>
+                                    My Account
+                                </p>
+                            </a>
+                        </li>
+                        {{-- / My Account --}}
 
                         {{-- Logout --}}
                         <li class="nav-item">

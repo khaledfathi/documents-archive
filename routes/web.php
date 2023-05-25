@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function (){
     Route::group(['prefix'=>'cp' ] , function (){
         //users
         Route::group(['prefix'=>'user'] , function (){
-            Route::get('index' , [UserController::class , 'indexUser'])->name('users');
+            Route::get('' , [UserController::class , 'indexUser'])->name('users');
             Route::get('create' , [UserController::class , 'createUser'])->name('createUser');
             Route::post('store', [UserController::class , 'storeUser'])->name('storeUser'); 
             Route::get('destroy/{id}', [UserController::class , 'destroyUser'])->name('destroyUser'); 
@@ -43,7 +43,12 @@ Route::middleware('auth')->group(function (){
         Route::get('about' , [AboutController::class , 'about'])->name('about');
    }); 
    //profile 
-   Route::get('profile', [ProfileController::class , 'profile'])->name('profile'); 
+   Route::group(['prefix'=>'profile'], function (){
+        Route::get('', [ProfileController::class , 'profile'])->name('profile'); 
+        Route::get('update-email', [ProfileController::class , 'updateEmail'])->name('updateEmail'); 
+        Route::post('update-password', [ProfileController::class , 'updatePassword'])->name('updatePassword'); 
+        Route::post('delete-account', [ProfileController::class , 'deleteAccount'])->name('deleteAccount'); 
+   }); 
 }); 
 
 Route::get('test', function (){

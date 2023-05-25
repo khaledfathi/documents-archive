@@ -236,10 +236,65 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Http-Controllers-Profile-ProfileController.html"
         },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method___construct"
+        },                {
             "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003Aprofile\u0028\u0029",
             "name": "profile",
             "summary": "Profile\u0020page",
             "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_profile"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003AupdateEmail\u0028\u0029",
+            "name": "updateEmail",
+            "summary": "update\u0020current\u0020user\u0027s\u0020Email\u0020address",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_updateEmail"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003AupdatePassword\u0028\u0029",
+            "name": "updatePassword",
+            "summary": "update\u0020current\u0020user\u0027s\u0020password",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_updatePassword"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003AdeleteAccount\u0028\u0029",
+            "name": "deleteAccount",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_deleteAccount"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003A\u0024userProvider",
+            "name": "userProvider",
+            "summary": "User\u0020Service\u0020Provider\u0020\u005BUser\u0020repository\u005D",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#property_userProvider"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Profile\\UpdateUserEmailRequest",
+            "name": "UpdateUserEmailRequest",
+            "summary": "",
+            "url": "classes/App-Http-Requests-Profile-UpdateUserEmailRequest.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Profile\\UpdateUserEmailRequest\u003A\u003Aauthorize\u0028\u0029",
+            "name": "authorize",
+            "summary": "Determine\u0020if\u0020the\u0020user\u0020is\u0020authorized\u0020to\u0020make\u0020this\u0020request.",
+            "url": "classes/App-Http-Requests-Profile-UpdateUserEmailRequest.html#method_authorize"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Profile\\UpdateUserEmailRequest\u003A\u003Arules\u0028\u0029",
+            "name": "rules",
+            "summary": "Get\u0020the\u0020validation\u0020rules\u0020that\u0020apply\u0020to\u0020the\u0020request.",
+            "url": "classes/App-Http-Requests-Profile-UpdateUserEmailRequest.html#method_rules"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Profile\\UpdateUserPasswordRequest",
+            "name": "UpdateUserPasswordRequest",
+            "summary": "",
+            "url": "classes/App-Http-Requests-Profile-UpdateUserPasswordRequest.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Profile\\UpdateUserPasswordRequest\u003A\u003Aauthorize\u0028\u0029",
+            "name": "authorize",
+            "summary": "Determine\u0020if\u0020the\u0020user\u0020is\u0020authorized\u0020to\u0020make\u0020this\u0020request.",
+            "url": "classes/App-Http-Requests-Profile-UpdateUserPasswordRequest.html#method_authorize"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Profile\\UpdateUserPasswordRequest\u003A\u003Arules\u0028\u0029",
+            "name": "rules",
+            "summary": "Get\u0020the\u0020validation\u0020rules\u0020that\u0020apply\u0020to\u0020the\u0020request.",
+            "url": "classes/App-Http-Requests-Profile-UpdateUserPasswordRequest.html#method_rules"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -301,15 +356,20 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-http-controllers-profile.html"
         },                {
-            "fqsen": "\\App\\Http\\Requests\\User",
-            "name": "User",
+            "fqsen": "\\App\\Http\\Requests\\Profile",
+            "name": "Profile",
             "summary": "",
-            "url": "namespaces/app-http-requests-user.html"
+            "url": "namespaces/app-http-requests-profile.html"
         },                {
             "fqsen": "\\App\\Http\\Requests",
             "name": "Requests",
             "summary": "",
             "url": "namespaces/app-http-requests.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\User",
+            "name": "User",
+            "summary": "",
+            "url": "namespaces/app-http-requests-user.html"
         },                {
             "fqsen": "\\App\\Providers",
             "name": "Providers",

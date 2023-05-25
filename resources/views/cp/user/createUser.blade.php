@@ -21,7 +21,7 @@
 
 
 @section('content')
-    <div class="card card-primary mx-auto col-8 ">
+    <div class="card card-primary mx-auto col-lg-8 col-sm-12">
         @if ($errors->any())
             <div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

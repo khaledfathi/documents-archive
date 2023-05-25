@@ -11,7 +11,7 @@ class DashboardController extends Controller
     /**
      * User Service Provider [user repository]
      */
-    public UserRepositoryContracts $userProvider ; 
+    private UserRepositoryContracts $userProvider ; 
     public function __construct(
         UserRepositoryContracts $userProvider
     )

@@ -16,7 +16,7 @@ class UserController extends Controller
     /**
      * User Service Provider [User repository]
      */
-    public $userProvider ; 
+    private $userProvider ; 
     public function __construct(
         UserRepositoryContracts $userProvider
     )
