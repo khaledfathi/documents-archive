@@ -6,7 +6,6 @@ use App\Http\Controllers\CP\User\UserController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +22,7 @@ Route::get('/' , fn()=>redirect(route('login')))->name('root');
 Route::get('login' , [AuthController::class , 'login'])->name('login')->middleware('guest');
 Route::post('login' , [AuthController::class , 'auth'])->name('login.auth');
 Route::get('logout', [AuthController::class , 'logout'])->name('logout');
+Route::get('documentations', fn()=>redirect('/docs/index.html'))->name('documentaions'); 
 
 Route::middleware('auth')->group(function (){
     //dashboard
@@ -48,9 +48,12 @@ Route::middleware('auth')->group(function (){
         Route::get('update-email', [ProfileController::class , 'updateEmail'])->name('updateEmail'); 
         Route::post('update-password', [ProfileController::class , 'updatePassword'])->name('updatePassword'); 
         Route::post('delete-account', [ProfileController::class , 'deleteAccount'])->name('deleteAccount'); 
+        Route::get('clear-user-logs', [ProfileController::class , 'clearUserLogs'])->name('clearUserLogs'); 
+        Route::get('destroy-user-log/{id}', [ProfileController::class , 'destroyUserLog'])->name('destroyUserLog'); 
    }); 
 }); 
 
+
 Route::get('test', function (){
-    return "experimintal";
+    echo "test";
 });

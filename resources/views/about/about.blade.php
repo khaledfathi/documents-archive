@@ -45,5 +45,6 @@
         <p style="font-size:15pt;">
             Laravel Version : {{app()->version()}} 
         </p>
+        <a href="{{route('documentaions')}}">Source Code Documentaions</a>
     </div>
 @endsection

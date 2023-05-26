@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Repository\Contracts\UserRepositoryContracts;
+use App\Repository\Contracts\User\UserRepositoryContract;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,9 +11,9 @@ class DashboardController extends Controller
     /**
      * User Service Provider [user repository]
      */
-    private UserRepositoryContracts $userProvider ; 
+    private UserRepositoryContract $userProvider ; 
     public function __construct(
-        UserRepositoryContracts $userProvider
+        UserRepositoryContract $userProvider
     )
     {
         $this->userProvider = $userProvider; 

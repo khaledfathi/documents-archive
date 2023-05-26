@@ -12,26 +12,25 @@
 
 
 @section('content')
-@if ($errors->any())
-    {{-- Errors --}}
-    <div class="alert alert-danger alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-        @foreach ($errors->all() as $error)
-           - {{$error}}<br>
-        @endforeach
-    </div>
-    {{-- / Errors --}}
-
-@elseif(session('ok')) 
-    {{--  OK --}}
-    <div class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h5><i class="icon fas fa-check"></i> Alert!</h5>
-        {{session('ok')}}
-    </div>
-    {{--  / OK --}}
-@endif
+    @if ($errors->any())
+        {{-- Errors --}}
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+            @foreach ($errors->all() as $error)
+                - {{ $error }}<br>
+            @endforeach
+        </div>
+        {{-- / Errors --}}
+    @elseif(session('ok'))
+        {{--  OK --}}
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-check"></i> Alert!</h5>
+            {{ session('ok') }}
+        </div>
+        {{--  / OK --}}
+    @endif
     <div class="card card-widget widget-user shadow">
         <!-- Add the bg color to the header using any of the bg-* classes -->
         <div class="widget-user-header bg-info">
@@ -75,72 +74,36 @@
             <div class="card-header">
                 <h3 class="card-title">Login History</h3>
             </div>
+            <div class="m-3">
+                {{ $userLogs->links() }}
+            </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Date</th>
+                            <th>Time</th>
                             <th>IP Address</th>
-                            <th>Browser</th>
-                            <th>OS</th>
+                            <th>Agent</th>
+                            <th>delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2022-11-02</td>
-                            <td>23.43.100.2</td>
-                            <td>FireFox</td>
-                            <td>Linux</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2022-11-02</td>
-                            <td>23.43.100.2</td>
-                            <td>FireFox</td>
-                            <td>Linux</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2022-11-02</td>
-                            <td>23.43.100.2</td>
-                            <td>FireFox</td>
-                            <td>Linux</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2022-11-02</td>
-                            <td>23.43.100.2</td>
-                            <td>FireFox</td>
-                            <td>Linux</td>
-                        </tr>
+                        @foreach ($userLogs as $log)
+                            <tr>
+                                <td>{{ $log->time }}</td>
+                                <td>{{ $log->ip_address }}</td>
+                                <td>{{ $log->user_agent }}</td>
+                                <td class="align-middle text-center">
+                                    <a href="{{route('destroyUserLog',$log->id)}}">
+                                        <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
-                <div class="col-sm-12 col-md-7 my-3">
-                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                        <ul class="pagination">
-                            <li class="paginate_button page-item previous disabled" id="example2_previous"><a href="#"
-                                    aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                            </li>
-                            <li class="paginate_button page-item active"><a href="#" aria-controls="example2"
-                                    data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2"
-                                    data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2"
-                                    data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2"
-                                    data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2"
-                                    data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2"
-                                    data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
-                            <li class="paginate_button page-item next" id="example2_next"><a href="#"
-                                    aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <a href="{{ route('clearUserLogs') }}" class="btn btn-danger m-3" style="width:100px">Clear Logs</a>
             </div>
             <!-- /.card-body -->
 
@@ -219,15 +182,17 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{route('deleteAccount')}}" method="post">
+            <form action="{{ route('deleteAccount') }}" method="post">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">USE YOU PASSWORD FOR DELETE CONFIRMATION</label>
-                        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Your password" name="password">
+                        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Your password"
+                            name="password">
                     </div>
                 </div>
-                <h5 class="text-center">all data related to this account will be destroy<br>There's no way to undo this step !</h5>
+                <h5 class="text-center">all data related to this account will be destroy<br>There's no way to undo this
+                    step !</h5>
                 <div class="card-footer text-center">
                     <button type="submit" class="btn btn-danger w-25" style="min-width:150px;">Delete Account</button>
                 </div>
@@ -235,5 +200,4 @@
         </div>
         {{-- / change delete account form card --}}
     </div>
-    <p>table of login informaion [login data-time , ip , OS , Browser ]</p>
 @endsection

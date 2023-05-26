@@ -1,14 +1,14 @@
 <?php 
-namespace App\Repository;
+namespace App\Repository\User;
 
 use App\Models\User as UserModel;
-use App\Repository\Contracts\UserRepositoryContracts;
+use App\Repository\Contracts\User\UserRepositoryContract;
 
 /**
  * UserRepository Class 
  * Repository handle CRUD operation on 'users' table in database 
  */
-class UserRepository implements UserRepositoryContracts {
+class UserRepository implements UserRepositoryContract {
     public function index(int $paginate=null):object
     {
         if ($paginate){

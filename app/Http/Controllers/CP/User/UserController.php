@@ -6,7 +6,7 @@ use App\Enum\User\UserType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
-use App\Repository\Contracts\UserRepositoryContracts;
+use App\Repository\Contracts\User\UserRepositoryContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -16,9 +16,9 @@ class UserController extends Controller
     /**
      * User Service Provider [User repository]
      */
-    private $userProvider ; 
+    private UserRepositoryContract $userProvider ; 
     public function __construct(
-        UserRepositoryContracts $userProvider
+        UserRepositoryContract $userProvider
     )
     {
         $this->userProvider = $userProvider; 

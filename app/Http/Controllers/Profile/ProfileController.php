@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Profile;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Profile\UpdateUserEmailRequest;
 use App\Http\Requests\Profile\UpdateUserPasswordRequest;
-use App\Repository\Contracts\UserRepositoryContracts;
+use App\Repository\Contracts\Log\UserLogRepositoryContract;
+use App\Repository\Contracts\User\UserRepositoryContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,19 +15,26 @@ class ProfileController extends Controller
     /**
      * User Service Provider [User repository]
      */
-    private UserRepositoryContracts $userProvider ; 
+    private UserRepositoryContract $userProvider ; 
+    /**
+     * User Log Service Provider [User Log Reposiroty]
+     */
+    private UserLogRepositoryContract $userLogProvider ; 
     public function __construct(
-        UserRepositoryContracts $userProvider
+        UserRepositoryContract $userProvider,
+        UserLogRepositoryContract $userLogProvider
     )
     {
         $this->userProvider = $userProvider; 
+        $this->userLogProvider = $userLogProvider; 
     }
     /**
      * Profile page
      * @return mixed view Profile Page
      */
-    public function profile(){        
-        return view('profile.profile'); 
+    public function profile(Request $request){
+        $userLogs = $this->userLogProvider->index(4); 
+        return view('profile.profile' , ['userLogs'=>$userLogs]); 
     }
     /**
      * update current user's Email address 
@@ -58,5 +66,22 @@ class ProfileController extends Controller
             return redirect(route('logout')); 
         }; 
         return back()->withErrors('Password is wrong !'); 
+    }
+    /**
+     * destroy all user's logs from 'user_logs table in database '
+     * @return mixed back to previous page
+     */
+    public function clearUserLogs(){
+        $this->userLogProvider->destroyAllRelatedToUser(auth()->user()->id); 
+        return back()->with(['ok'=>'Logs has been cleared']); 
+    }
+    /**
+     * destroy specific user's log from 'user_logs'  table in database 
+     * @param Request $request requset- used to get the log id to be destroy
+     * @return mixed back to previous page 
+     */
+    public function destroyUserLog(Request $request){
+       $this->userLogProvider->destroyOneRelatedToUser($request->id , auth()->user()->id); 
+       return back()->with(['ok'=>'Log has been deleted']); 
     }
 }

@@ -128,7 +128,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
@@ -149,9 +149,16 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Http-Controllers-Profile-ProfileController.html#property_userLogProvider">$userLogProvider</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a>            </span>
+</dt>
+<dd>User Log Service Provider [User Log Reposiroty]</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Http-Controllers-Profile-ProfileController.html#property_userProvider">$userProvider</a>
     <span>
-                        &nbsp;: <a href="classes/App-Repository-Contracts-UserRepositoryContracts.html"><abbr title="\App\Repository\Contracts\UserRepositoryContracts">UserRepositoryContracts</abbr></a>            </span>
+                        &nbsp;: <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html"><abbr title="\App\Repository\Contracts\User\UserRepositoryContract">UserRepositoryContract</abbr></a>            </span>
 </dt>
 <dd>User Service Provider [User repository]</dd>
 
@@ -163,11 +170,25 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_clearUserLogs">clearUserLogs()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>destroy all user&#039;s logs from &#039;user_logs table in database &#039;</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_deleteAccount">deleteAccount()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_destroyUserLog">destroyUserLog()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>destroy specific user&#039;s log from &#039;user_logs&#039;  table in database</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_profile">profile()</a>
@@ -209,6 +230,40 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_userLogProvider">
+        $userLogProvider
+        <a href="classes/App-Http-Controllers-Profile-ProfileController.html#property_userLogProvider" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">22</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">User Log Service Provider [User Log Reposiroty]</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$userLogProvider</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_userProvider">
         $userProvider
         <a href="classes/App-Http-Controllers-Profile-ProfileController.html#property_userProvider" class="headerlink"><i class="fas fa-link"></i></a>
@@ -218,7 +273,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -226,7 +281,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-Repository-Contracts-UserRepositoryContracts.html"><abbr title="\App\Repository\Contracts\UserRepositoryContracts">UserRepositoryContracts</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html"><abbr title="\App\Repository\Contracts\User\UserRepositoryContract">UserRepositoryContract</abbr></a></span>
     <span class="phpdocumentor-signature__name">$userProvider</span>
     </code>
 
@@ -256,14 +311,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-UserRepositoryContracts.html"><abbr title="\App\Repository\Contracts\UserRepositoryContracts">UserRepositoryContracts</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userProvider</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html"><abbr title="\App\Repository\Contracts\User\UserRepositoryContract">UserRepositoryContract</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userProvider</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userLogProvider</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -271,7 +326,15 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$userProvider</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-UserRepositoryContracts.html"><abbr title="\App\Repository\Contracts\UserRepositoryContracts">UserRepositoryContracts</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html"><abbr title="\App\Repository\Contracts\User\UserRepositoryContract">UserRepositoryContract</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$userLogProvider</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -293,6 +356,41 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_clearUserLogs">
+        clearUserLogs()
+        <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_clearUserLogs" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">74</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">destroy all user&#039;s logs from &#039;user_logs table in database &#039;</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">clearUserLogs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>back to previous page</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_deleteAccount">
         deleteAccount()
         <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_deleteAccount" class="headerlink"><i class="fas fa-link"></i></a>
@@ -300,7 +398,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -337,6 +435,53 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_destroyUserLog">
+        destroyUserLog()
+        <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_destroyUserLog" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">83</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">destroy specific user&#039;s log from &#039;user_logs&#039;  table in database</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">destroyUserLog</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>requset- used to get the log id to be destroy</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>back to previous page</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_profile">
         profile()
         <a href="classes/App-Http-Controllers-Profile-ProfileController.html#method_profile" class="headerlink"><i class="fas fa-link"></i></a>
@@ -344,7 +489,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -352,10 +497,21 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">profile</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">profile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -379,7 +535,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -426,7 +582,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Profile/ProfileController.php"><a href="files/app-http-controllers-profile-profilecontroller.html"><abbr title="app/Http/Controllers/Profile/ProfileController.php">ProfileController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 

@@ -1,10 +1,10 @@
 <?php
-namespace App\Repository\Contracts;
+namespace App\Repository\Contracts\User;
 /**
  *Interface for UserRepository class
  *
  */ 
-interface UserRepositoryContracts {
+interface UserRepositoryContract {
     /**
      * get all users 
      * @param int $paginate the count of paginate rows

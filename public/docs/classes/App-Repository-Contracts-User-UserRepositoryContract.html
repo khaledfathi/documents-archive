@@ -102,38 +102,31 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-http.html">Http</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-http-controllers.html">Controllers</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-http-controllers-auth.html">Auth</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-repository.html">Repository</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-repository-contracts.html">Contracts</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-repository-contracts-user.html">User</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -class">
+    <article class="phpdocumentor-element -interface">
         <h2 class="phpdocumentor-content__title">
-    AuthController
-
-        <span class="phpdocumentor-element__extends">
-        extends <a href="classes/App-Http-Controllers-Controller.html"><abbr title="\App\Http\Controllers\Controller">Controller</abbr></a>
-    </span>
-    
-            <div class="phpdocumentor-element__package">
-            in package
+    UserRepositoryContract
+                <div class="phpdocumentor-element__package">
+            in
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
+                                    <li><a href="packages/Application.html">Application</a></li>
                             </ul>
         </div>
-    
-    
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Auth/AuthController.php"><a href="files/app-http-controllers-auth-authcontroller.html"><abbr title="app/Http/Controllers/Auth/AuthController.php">AuthController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Repository/Contracts/User/UserRepositoryContract.php"><a href="files/app-repository-contracts-user-userrepositorycontract.html"><abbr title="app/Repository/Contracts/User/UserRepositoryContract.php">UserRepositoryContract.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">7</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Interface for UserRepository class</p>
+
 
 
 
@@ -148,40 +141,40 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/App-Http-Controllers-Auth-AuthController.html#property_userLogProvider">$userLogProvider</a>
+                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_destroy">destroy()</a>
     <span>
-                        &nbsp;: <a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a>            </span>
+                                &nbsp;: bool    </span>
 </dt>
-<dd>User Logs Service Provider [User Logs repository]</dd>
-
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Http-Controllers-Auth-AuthController.html#method___construct">__construct()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
+<dd>destroy user by id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Http-Controllers-Auth-AuthController.html#method_auth">auth()</a>
+    <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_index">index()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: object    </span>
 </dt>
-<dd>authenticate login</dd>
+<dd>get all users</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Http-Controllers-Auth-AuthController.html#method_login">login()</a>
+    <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_show">show()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: object|null    </span>
 </dt>
-<dd>login page</dd>
+<dd>get user by id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Http-Controllers-Auth-AuthController.html#method_logout">logout()</a>
+    <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_store">store()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: object    </span>
 </dt>
-<dd>Logout</dd>
+<dd>store new user</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_update">update()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>update user by id</dd>
 
         </dl>
 
@@ -189,52 +182,10 @@
 
         
 
-        
-    <section class="phpdocumentor-properties">
-        <h3 class="phpdocumentor-elements__header" id="properties">
-            Properties
-            <a href="classes/App-Http-Controllers-Auth-AuthController.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
-        </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_userLogProvider">
-        $userLogProvider
-        <a href="classes/App-Http-Controllers-Auth-AuthController.html#property_userLogProvider" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Auth/AuthController.php"><a href="files/app-http-controllers-auth-authcontroller.html"><abbr title="app/Http/Controllers/Auth/AuthController.php">AuthController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">16</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">User Logs Service Provider [User Logs repository]</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$userLogProvider</span>
-    </code>
-
-    
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-            </section>
-
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Http-Controllers-Auth-AuthController.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -242,76 +193,32 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/App-Http-Controllers-Auth-AuthController.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_destroy">
+        destroy()
+        <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_destroy" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Auth/AuthController.php"><a href="files/app-http-controllers-auth-authcontroller.html"><abbr title="app/Http/Controllers/Auth/AuthController.php">AuthController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Repository/Contracts/User/UserRepositoryContract.php"><a href="files/app-repository-contracts-user-userrepositorycontract.html"><abbr title="app/Repository/Contracts/User/UserRepositoryContract.php">UserRepositoryContract.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userLogProvider</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$userLogProvider</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"><abbr title="\App\Repository\Contracts\Log\UserLogRepositoryContract">UserLogRepositoryContract</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_auth">
-        auth()
-        <a href="classes/App-Http-Controllers-Auth-AuthController.html#method_auth" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Auth/AuthController.php"><a href="files/app-http-controllers-auth-authcontroller.html"><abbr title="app/Http/Controllers/Auth/AuthController.php">AuthController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">34</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">authenticate login</p>
+        <p class="phpdocumentor-summary">destroy user by id</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">auth</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">destroy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>request credential</p>
+                    <section class="phpdocumentor-description"><p>user id</p>
 </section>
 
             </dd>
@@ -320,9 +227,9 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>back to previous page</p>
+            <section class="phpdocumentor-description"><p>true for success | false for fail</p>
 </section>
 
     
@@ -333,31 +240,43 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_login">
-        login()
-        <a href="classes/App-Http-Controllers-Auth-AuthController.html#method_login" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_index">
+        index()
+        <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_index" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Auth/AuthController.php"><a href="files/app-http-controllers-auth-authcontroller.html"><abbr title="app/Http/Controllers/Auth/AuthController.php">AuthController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Repository/Contracts/User/UserRepositoryContract.php"><a href="files/app-repository-contracts-user-userrepositorycontract.html"><abbr title="app/Repository/Contracts/User/UserRepositoryContract.php">UserRepositoryContract.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">login page</p>
+        <p class="phpdocumentor-summary">get all users</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">login</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">index</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$paginate</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$paginate</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the count of paginate rows</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">object</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>view Login page</p>
+            <section class="phpdocumentor-description"><p>Eloquent Object contains users</p>
 </section>
 
     
@@ -368,31 +287,146 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_logout">
-        logout()
-        <a href="classes/App-Http-Controllers-Auth-AuthController.html#method_logout" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_show">
+        show()
+        <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_show" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/Auth/AuthController.php"><a href="files/app-http-controllers-auth-authcontroller.html"><abbr title="app/Http/Controllers/Auth/AuthController.php">AuthController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Repository/Contracts/User/UserRepositoryContract.php"><a href="files/app-repository-contracts-user-userrepositorycontract.html"><abbr title="app/Repository/Contracts/User/UserRepositoryContract.php">UserRepositoryContract.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Logout</p>
+        <p class="phpdocumentor-summary">get user by id</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">logout</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">show</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>user id</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">object|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>redirect to login page - route('login')</p>
+            <section class="phpdocumentor-description"><p>Eloquent Object if user got found | null</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_store">
+        store()
+        <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_store" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Repository/Contracts/User/UserRepositoryContract.php"><a href="files/app-repository-contracts-user-userrepositorycontract.html"><abbr title="app/Repository/Contracts/User/UserRepositoryContract.php">UserRepositoryContract.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">19</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">store new user</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">store</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>associative array , each key must be identical to name of field</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">object</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Eloquent Object contains the new user that has been stored</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_update">
+        update()
+        <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Repository/Contracts/User/UserRepositoryContract.php"><a href="files/app-repository-contracts-user-userrepositorycontract.html"><abbr title="app/Repository/Contracts/User/UserRepositoryContract.php">UserRepositoryContract.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">update user by id</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>associative array to update record , each key must be identical to name of field</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>user id that will be updated</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>true for succsess | false for failed</p>
 </section>
 
     
@@ -475,7 +509,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/App-Http-Controllers-Auth-AuthController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Repository-Contracts-User-UserRepositoryContract.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

@@ -26,6 +26,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Http-Controllers-Auth-AuthController.html"
         },                {
+            "fqsen": "\\App\\Http\\Controllers\\Auth\\AuthController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Auth-AuthController.html#method___construct"
+        },                {
             "fqsen": "\\App\\Http\\Controllers\\Auth\\AuthController\u003A\u003Alogin\u0028\u0029",
             "name": "login",
             "summary": "login\u0020page",
@@ -40,6 +45,11 @@ Search.appendIndex(
             "name": "logout",
             "summary": "Logout",
             "url": "classes/App-Http-Controllers-Auth-AuthController.html#method_logout"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Auth\\AuthController\u003A\u003A\u0024userLogProvider",
+            "name": "userLogProvider",
+            "summary": "User\u0020Logs\u0020Service\u0020Provider\u0020\u005BUser\u0020Logs\u0020repository\u005D",
+            "url": "classes/App-Http-Controllers-Auth-AuthController.html#property_userLogProvider"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\Controller",
             "name": "Controller",
@@ -161,66 +171,6 @@ Search.appendIndex(
             "summary": "Bootstrap\u0020services.",
             "url": "classes/App-Providers-RepositoryServiceProvider.html#method_boot"
         },                {
-            "fqsen": "\\App\\Repository\\Contracts\\UserRepositoryContracts",
-            "name": "UserRepositoryContracts",
-            "summary": "Interface\u0020for\u0020UserRepository\u0020class",
-            "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html"
-        },                {
-            "fqsen": "\\App\\Repository\\Contracts\\UserRepositoryContracts\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "get\u0020all\u0020users",
-            "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html#method_index"
-        },                {
-            "fqsen": "\\App\\Repository\\Contracts\\UserRepositoryContracts\u003A\u003Astore\u0028\u0029",
-            "name": "store",
-            "summary": "store\u0020new\u0020user",
-            "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html#method_store"
-        },                {
-            "fqsen": "\\App\\Repository\\Contracts\\UserRepositoryContracts\u003A\u003Adestroy\u0028\u0029",
-            "name": "destroy",
-            "summary": "destroy\u0020user\u0020by\u0020id",
-            "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html#method_destroy"
-        },                {
-            "fqsen": "\\App\\Repository\\Contracts\\UserRepositoryContracts\u003A\u003Ashow\u0028\u0029",
-            "name": "show",
-            "summary": "get\u0020user\u0020by\u0020id",
-            "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html#method_show"
-        },                {
-            "fqsen": "\\App\\Repository\\Contracts\\UserRepositoryContracts\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
-            "summary": "update\u0020user\u0020by\u0020id",
-            "url": "classes/App-Repository-Contracts-UserRepositoryContracts.html#method_update"
-        },                {
-            "fqsen": "\\App\\Repository\\UserRepository",
-            "name": "UserRepository",
-            "summary": "UserRepository\u0020Class\nRepository\u0020handle\u0020CRUD\u0020operation\u0020on\u0020\u0027users\u0027\u0020table\u0020in\u0020database",
-            "url": "classes/App-Repository-UserRepository.html"
-        },                {
-            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "get\u0020all\u0020users",
-            "url": "classes/App-Repository-UserRepository.html#method_index"
-        },                {
-            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003Astore\u0028\u0029",
-            "name": "store",
-            "summary": "store\u0020new\u0020user",
-            "url": "classes/App-Repository-UserRepository.html#method_store"
-        },                {
-            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003Adestroy\u0028\u0029",
-            "name": "destroy",
-            "summary": "destroy\u0020user\u0020by\u0020id",
-            "url": "classes/App-Repository-UserRepository.html#method_destroy"
-        },                {
-            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003Ashow\u0028\u0029",
-            "name": "show",
-            "summary": "get\u0020user\u0020by\u0020id",
-            "url": "classes/App-Repository-UserRepository.html#method_show"
-        },                {
-            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
-            "summary": "update\u0020user\u0020by\u0020id",
-            "url": "classes/App-Repository-UserRepository.html#method_update"
-        },                {
             "fqsen": "\\App\\Http\\Controllers\\About\\AboutController",
             "name": "AboutController",
             "summary": "",
@@ -261,10 +211,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_deleteAccount"
         },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003AclearUserLogs\u0028\u0029",
+            "name": "clearUserLogs",
+            "summary": "destroy\u0020all\u0020user\u0027s\u0020logs\u0020from\u0020\u0027user_logs\u0020table\u0020in\u0020database\u0020\u0027",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_clearUserLogs"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003AdestroyUserLog\u0028\u0029",
+            "name": "destroyUserLog",
+            "summary": "destroy\u0020specific\u0020user\u0027s\u0020log\u0020from\u0020\u0027user_logs\u0027\u0020\u0020table\u0020in\u0020database",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#method_destroyUserLog"
+        },                {
             "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003A\u0024userProvider",
             "name": "userProvider",
             "summary": "User\u0020Service\u0020Provider\u0020\u005BUser\u0020repository\u005D",
             "url": "classes/App-Http-Controllers-Profile-ProfileController.html#property_userProvider"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Profile\\ProfileController\u003A\u003A\u0024userLogProvider",
+            "name": "userLogProvider",
+            "summary": "User\u0020Log\u0020Service\u0020Provider\u0020\u005BUser\u0020Log\u0020Reposiroty\u005D",
+            "url": "classes/App-Http-Controllers-Profile-ProfileController.html#property_userLogProvider"
         },                {
             "fqsen": "\\App\\Http\\Requests\\Profile\\UpdateUserEmailRequest",
             "name": "UpdateUserEmailRequest",
@@ -295,6 +260,116 @@ Search.appendIndex(
             "name": "rules",
             "summary": "Get\u0020the\u0020validation\u0020rules\u0020that\u0020apply\u0020to\u0020the\u0020request.",
             "url": "classes/App-Http-Requests-Profile-UpdateUserPasswordRequest.html#method_rules"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Log\\UserLogRepositoryContract",
+            "name": "UserLogRepositoryContract",
+            "summary": "",
+            "url": "classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Log\\UserLogRepositoryContract\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "show\u0020index\u0020of\u0020all\u0020user\u0027s\u0020logedin\u0020logs",
+            "url": "classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html#method_index"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Log\\UserLogRepositoryContract\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "Store\u0020user\u0027s\u0020Login\u0020Log\u0020information\u0020\u0028time\u0020,\u0020ip\u0020address\u0020,\u0020user\u0020agent\u0029",
+            "url": "classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html#method_store"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Log\\UserLogRepositoryContract\u003A\u003AdestroyOneRelatedToUser\u0028\u0029",
+            "name": "destroyOneRelatedToUser",
+            "summary": "destroy\u0020log\u0020by\u0020id\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html#method_destroyOneRelatedToUser"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Log\\UserLogRepositoryContract\u003A\u003AdestroyAllRelatedToUser\u0028\u0029",
+            "name": "destroyAllRelatedToUser",
+            "summary": "destroy\u0020all\u0020logs\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Contracts-Log-UserLogRepositoryContract.html#method_destroyAllRelatedToUser"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\User\\UserRepositoryContract",
+            "name": "UserRepositoryContract",
+            "summary": "Interface\u0020for\u0020UserRepository\u0020class",
+            "url": "classes/App-Repository-Contracts-User-UserRepositoryContract.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\User\\UserRepositoryContract\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "get\u0020all\u0020users",
+            "url": "classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_index"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\User\\UserRepositoryContract\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "store\u0020new\u0020user",
+            "url": "classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_store"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\User\\UserRepositoryContract\u003A\u003Adestroy\u0028\u0029",
+            "name": "destroy",
+            "summary": "destroy\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_destroy"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\User\\UserRepositoryContract\u003A\u003Ashow\u0028\u0029",
+            "name": "show",
+            "summary": "get\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_show"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\User\\UserRepositoryContract\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-Contracts-User-UserRepositoryContract.html#method_update"
+        },                {
+            "fqsen": "\\App\\Repository\\Log\\UserLogRepository",
+            "name": "UserLogRepository",
+            "summary": "",
+            "url": "classes/App-Repository-Log-UserLogRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Log\\UserLogRepository\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "show\u0020index\u0020of\u0020all\u0020user\u0027s\u0020logedin\u0020logs",
+            "url": "classes/App-Repository-Log-UserLogRepository.html#method_index"
+        },                {
+            "fqsen": "\\App\\Repository\\Log\\UserLogRepository\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "Store\u0020user\u0027s\u0020Login\u0020Log\u0020information\u0020\u0028time\u0020,\u0020ip\u0020address\u0020,\u0020user\u0020agent\u0029",
+            "url": "classes/App-Repository-Log-UserLogRepository.html#method_store"
+        },                {
+            "fqsen": "\\App\\Repository\\Log\\UserLogRepository\u003A\u003AdestroyOneRelatedToUser\u0028\u0029",
+            "name": "destroyOneRelatedToUser",
+            "summary": "destroy\u0020log\u0020by\u0020id\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Log-UserLogRepository.html#method_destroyOneRelatedToUser"
+        },                {
+            "fqsen": "\\App\\Repository\\Log\\UserLogRepository\u003A\u003AdestroyAllRelatedToUser\u0028\u0029",
+            "name": "destroyAllRelatedToUser",
+            "summary": "destroy\u0020all\u0020logs\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Log-UserLogRepository.html#method_destroyAllRelatedToUser"
+        },                {
+            "fqsen": "\\App\\Repository\\User\\UserRepository",
+            "name": "UserRepository",
+            "summary": "UserRepository\u0020Class\nRepository\u0020handle\u0020CRUD\u0020operation\u0020on\u0020\u0027users\u0027\u0020table\u0020in\u0020database",
+            "url": "classes/App-Repository-User-UserRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\User\\UserRepository\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "get\u0020all\u0020users",
+            "url": "classes/App-Repository-User-UserRepository.html#method_index"
+        },                {
+            "fqsen": "\\App\\Repository\\User\\UserRepository\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "store\u0020new\u0020user",
+            "url": "classes/App-Repository-User-UserRepository.html#method_store"
+        },                {
+            "fqsen": "\\App\\Repository\\User\\UserRepository\u003A\u003Adestroy\u0028\u0029",
+            "name": "destroy",
+            "summary": "destroy\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-User-UserRepository.html#method_destroy"
+        },                {
+            "fqsen": "\\App\\Repository\\User\\UserRepository\u003A\u003Ashow\u0028\u0029",
+            "name": "show",
+            "summary": "get\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-User-UserRepository.html#method_show"
+        },                {
+            "fqsen": "\\App\\Repository\\User\\UserRepository\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020user\u0020by\u0020id",
+            "url": "classes/App-Repository-User-UserRepository.html#method_update"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -376,6 +451,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-providers.html"
         },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Log",
+            "name": "Log",
+            "summary": "",
+            "url": "namespaces/app-repository-contracts-log.html"
+        },                {
             "fqsen": "\\App\\Repository\\Contracts",
             "name": "Contracts",
             "summary": "",
@@ -385,5 +465,20 @@ Search.appendIndex(
             "name": "Repository",
             "summary": "",
             "url": "namespaces/app-repository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\User",
+            "name": "User",
+            "summary": "",
+            "url": "namespaces/app-repository-contracts-user.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Log",
+            "name": "Log",
+            "summary": "",
+            "url": "namespaces/app-repository-log.html"
+        },                {
+            "fqsen": "\\App\\Repository\\User",
+            "name": "User",
+            "summary": "",
+            "url": "namespaces/app-repository-user.html"
         }            ]
 );
