@@ -4,6 +4,7 @@ use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CP\User\UserController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Document\ElectricityDocumentController;
 use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,9 +52,12 @@ Route::middleware('auth')->group(function (){
         Route::get('clear-user-logs', [ProfileController::class , 'clearUserLogs'])->name('clearUserLogs'); 
         Route::get('destroy-user-log/{id}', [ProfileController::class , 'destroyUserLog'])->name('destroyUserLog'); 
    }); 
+   //documents
+   Route::group(['prefix'=>'documents'] , function (){        
+        Route::get('electricity-documents' , [ElectricityDocumentController::class , 'indexElectricityDocument'])->name('electricityDocuments'); 
+   });
 }); 
 
 
 Route::get('test', function (){
-    echo "test";
 });
