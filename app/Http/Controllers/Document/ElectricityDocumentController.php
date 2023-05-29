@@ -7,7 +7,18 @@ use Illuminate\Http\Request;
 
 class ElectricityDocumentController extends Controller
 {
-    public function indexElectricityDocument(){
-        return view('document.electricityDocuments'); 
+    /**
+     * index page of electricity documents
+     * @return mixed view electricity documents page
+     */
+    public function index(){
+        return view('document.electricity.index'); 
+    }
+    /**
+     * create new electricity bill page 
+     * @return mixed view create page for new electriciry bill 
+     */
+    public function create(){
+        return view('document.electricity.create'); 
     }
 }

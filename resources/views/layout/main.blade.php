@@ -14,6 +14,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
     @yield('links')
+    @yield('styles')
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -81,7 +82,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('dashboard') }}" class="nav-link">
+                                    <a href="{{ route('dashboard.all') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All</p>
                                     </a>
@@ -137,7 +138,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('electricityDocuments')}}" class="nav-link">
+                                    <a href="{{route('document.electricity.index')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Electricity</p>
                                     </a>
@@ -239,7 +240,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('users') }}" class="nav-link">
+                                    <a href="{{ route('user.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Users</p>
                                     </a>

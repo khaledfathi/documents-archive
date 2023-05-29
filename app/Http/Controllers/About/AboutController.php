@@ -12,6 +12,6 @@ class AboutController extends Controller
      * @return mixed view about page 
      */
     public function about (){
-        return view ('about.about'); 
+        return view ('about.index'); 
     }
 }

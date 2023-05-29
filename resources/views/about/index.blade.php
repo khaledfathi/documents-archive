@@ -7,7 +7,7 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item active">Control Panel</li>
-        <li class="breadcrumb-item active"><a href="{{ route('about') }}">About</a></li>
+        <li class="breadcrumb-item active">About</li>
     </ol>
 @endsection
 

@@ -48,16 +48,16 @@ class UserController extends Controller
      * users page - get all users 
      * @return mixed view users page
      */
-    public function indexUser(){
+    public function index(){
         $users = $this->userProvider->index(15); 
-        return view('cp.user.users' ,['users'=>$users]); 
+        return view('cp.user.index' ,['users'=>$users]); 
     }
     /**
      * store new user 
      * @param StoreUserRequest $request custom request for storing new user
      * @return mixed redirect to users page - route('users') 
      */
-    public function storeUser(StoreUserRequest $request)
+    public function store(StoreUserRequest $request)
     {
         //prepare data
         $data = $request->only(['name','email']);
@@ -73,16 +73,16 @@ class UserController extends Controller
      * create new user page
      * @return mixed view create user page 
      */
-    public function createUser(){
+    public function create(){
         $userTypes= UserType::cases(); 
-        return view('cp.user.createUser' , ['userTypes'=>$userTypes]);
+        return view('cp.user.create' , ['userTypes'=>$userTypes]);
     }
     /**
      * destroy user by id 
      * @param Request $request request - to get user id 
      * @return mixed back to previous page
      */
-    public function destroyUser(Request $request){
+    public function destroy(Request $request){
         if (auth()->user()->id == $request->id){
             return back()->withErrors('you can\'t delete your account !'); 
         }
@@ -100,13 +100,13 @@ class UserController extends Controller
      * @param Request $request request - to get user id that will be edited 
      * @return mixed view edit page
      */
-    public function editUser(Request $request){
+    public function edit(Request $request){
         //current pagination value
         $lastPaginationLink = session()->previousUrl(); 
 
         $userTypes= UserType::cases(); 
         $record = $this->userProvider->show($request->id); 
-        return view('cp.user.editUser', [
+        return view('cp.user.edit', [
             'userTypes'=>$userTypes , 
             'user'=>$record,
             'lastPaginationLink'=> $lastPaginationLink 
@@ -117,7 +117,7 @@ class UserController extends Controller
      * @param Request $request request - to get user id that will be update
      * @return mixed back to previous page 
      */
-    public function updateUser(UpdateUserRequest $request){
+    public function update(UpdateUserRequest $request){
         $data=[
             'name'=>$request->name,
             'email'=>$request->email,

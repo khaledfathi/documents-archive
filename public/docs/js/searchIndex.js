@@ -71,35 +71,35 @@ Search.appendIndex(
             "summary": "handle\u0020user\u0027s\u0020image\u0020upload",
             "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_uploadImage"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003AindexUser\u0028\u0029",
-            "name": "indexUser",
+            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
             "summary": "users\u0020page\u0020\u002D\u0020get\u0020all\u0020users",
-            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_indexUser"
+            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_index"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003AstoreUser\u0028\u0029",
-            "name": "storeUser",
+            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003Astore\u0028\u0029",
+            "name": "store",
             "summary": "store\u0020new\u0020user",
-            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_storeUser"
+            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_store"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003AcreateUser\u0028\u0029",
-            "name": "createUser",
+            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
             "summary": "create\u0020new\u0020user\u0020page",
-            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_createUser"
+            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_create"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003AdestroyUser\u0028\u0029",
-            "name": "destroyUser",
+            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003Adestroy\u0028\u0029",
+            "name": "destroy",
             "summary": "destroy\u0020user\u0020by\u0020id",
-            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_destroyUser"
+            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_destroy"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003AeditUser\u0028\u0029",
-            "name": "editUser",
+            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003Aedit\u0028\u0029",
+            "name": "edit",
             "summary": "view\u0020edit\u0020user\u0020page\u0020with\u0020display\u0020user\u0027s\u0020data\u0020that\u0020selected\u0020by\u0020is",
-            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_editUser"
+            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_edit"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003AupdateUser\u0028\u0029",
-            "name": "updateUser",
+            "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
             "summary": "update\u0020user\u0020by\u0020id",
-            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_updateUser"
+            "url": "classes/App-Http-Controllers-CP-User-UserController.html#method_update"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\CP\\User\\UserController\u003A\u003A\u0024userProvider",
             "name": "userProvider",
@@ -371,6 +371,21 @@ Search.appendIndex(
             "summary": "update\u0020user\u0020by\u0020id",
             "url": "classes/App-Repository-User-UserRepository.html#method_update"
         },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController",
+            "name": "ElectricityDocumentController",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "index\u0020page\u0020of\u0020electricity\u0020documents",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_create"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -425,6 +440,11 @@ Search.appendIndex(
             "name": "Dashboard",
             "summary": "",
             "url": "namespaces/app-http-controllers-dashboard.html"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document",
+            "name": "Document",
+            "summary": "",
+            "url": "namespaces/app-http-controllers-document.html"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\Profile",
             "name": "Profile",

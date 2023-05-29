@@ -14,7 +14,7 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item active">Control Panel</li>
-        <li class="breadcrumb-item active"><a href="{{ route('users') }}">Users</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('user.index') }}">Users</a></li>
         <li class="breadcrumb-item active">Edit</li>
     </ol>
 @endsection
@@ -36,7 +36,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('updateUser') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('user.update') }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{($user)?$user->id:null}}"> {{--user id--}}
             <input type="hidden" name="lastPaginationLink" value="{{($lastPaginationLink)?$lastPaginationLink:null}}"> {{--pagination - page number --}}

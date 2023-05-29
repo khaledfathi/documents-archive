@@ -42,7 +42,7 @@ class AuthController extends Controller
                     'user_id'=>auth()->user()->id,
                     'auth_status'=>true 
                 ]); 
-                return redirect(route('dashboard')); 
+                return redirect(route('dashboard.all')); 
             }
         return back(); 
     }

@@ -7,14 +7,14 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item active">Control Panel</li>
-        <li class="breadcrumb-item active"><a href="{{route('users')}}">Users</a></li>
+        <li class="breadcrumb-item active">Users</li>
     </ol>
 @endsection
 
 
 @section('content')
     <div class="col d-block m-3">
-        <a href="{{ route('createUser') }}" class="btn btn-block btn-primary btn-lg  col-2 " style="min-width:150px">New
+        <a href="{{ route('user.create') }}" class="btn btn-block btn-primary btn-lg  col-2 " style="min-width:150px">New
             User</a>
     </div>
     <div class="card">
@@ -83,12 +83,12 @@
                                         <td class="align-middle text-center">{{ $user->email }}</td>
                                         <td class="align-middle text-center">{{$user->type}}</td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('editUser', ['id' => $user->id]) }}">
+                                            <a href="{{ route('user.edit', ['id' => $user->id]) }}">
                                                 <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
                                             </a>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('destroyUser', ['id' => $user->id]) }}">
+                                            <a href="{{ route('user.destroy', ['id' => $user->id]) }}">
                                                 <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
                                             </a>
                                         </td>

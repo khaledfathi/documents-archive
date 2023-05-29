@@ -6,7 +6,7 @@
 @section('path')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('profile') }}">Profile</a></li>
+        <li class="breadcrumb-item active">My Account</li>
     </ol>
 @endsection
 
@@ -95,7 +95,7 @@
                                 <td>{{ $log->ip_address }}</td>
                                 <td>{{ $log->user_agent }}</td>
                                 <td class="align-middle text-center">
-                                    <a href="{{route('destroyUserLog',$log->id)}}">
+                                    <a href="{{route('profile.destroyUserLog',$log->id)}}">
                                         <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
                                     </a>
                                 </td>
@@ -103,7 +103,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a href="{{ route('clearUserLogs') }}" class="btn btn-danger m-3" style="width:100px">Clear Logs</a>
+                <a href="{{ route('profile.clearUserLogs') }}" class="btn btn-danger m-3" style="width:100px">Clear Logs</a>
             </div>
             <!-- /.card-body -->
 
@@ -117,7 +117,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{ route('updateEmail') }}" method="get">
+            <form action="{{ route('profile.updateEmail') }}" method="get">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -149,7 +149,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{ route('updatePassword') }}" method="post">
+            <form action="{{ route('profile.updatePassword') }}" method="post">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -182,7 +182,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{ route('deleteAccount') }}" method="post">
+            <form action="{{ route('profile.deleteAccount') }}" method="post">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">

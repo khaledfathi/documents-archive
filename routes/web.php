@@ -27,18 +27,18 @@ Route::get('documentations', fn()=>redirect('/docs/index.html'))->name('document
 
 Route::middleware('auth')->group(function (){
     //dashboard
-    Route::get('dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard');
+    Route::get('dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard.all');
 
     //cp [control panel]
     Route::group(['prefix'=>'cp' ] , function (){
         //users
         Route::group(['prefix'=>'user'] , function (){
-            Route::get('' , [UserController::class , 'indexUser'])->name('users');
-            Route::get('create' , [UserController::class , 'createUser'])->name('createUser');
-            Route::post('store', [UserController::class , 'storeUser'])->name('storeUser'); 
-            Route::get('destroy/{id}', [UserController::class , 'destroyUser'])->name('destroyUser'); 
-            Route::get('edit/{id}', [UserController::class , 'editUser'])->name('editUser'); 
-            Route::post('update', [UserController::class , 'updateUser'])->name('updateUser'); 
+            Route::get('' , [UserController::class , 'index'])->name('user.index');
+            Route::get('create' , [UserController::class , 'create'])->name('user.create');
+            Route::post('store', [UserController::class , 'store'])->name('user.store'); 
+            Route::get('destroy/{id}', [UserController::class , 'destroy'])->name('user.destroy'); 
+            Route::get('edit/{id}', [UserController::class , 'edit'])->name('user.edit'); 
+            Route::post('update', [UserController::class , 'update'])->name('user.update'); 
         }); 
         //about
         Route::get('about' , [AboutController::class , 'about'])->name('about');
@@ -46,15 +46,16 @@ Route::middleware('auth')->group(function (){
    //profile 
    Route::group(['prefix'=>'profile'], function (){
         Route::get('', [ProfileController::class , 'profile'])->name('profile'); 
-        Route::get('update-email', [ProfileController::class , 'updateEmail'])->name('updateEmail'); 
-        Route::post('update-password', [ProfileController::class , 'updatePassword'])->name('updatePassword'); 
-        Route::post('delete-account', [ProfileController::class , 'deleteAccount'])->name('deleteAccount'); 
-        Route::get('clear-user-logs', [ProfileController::class , 'clearUserLogs'])->name('clearUserLogs'); 
-        Route::get('destroy-user-log/{id}', [ProfileController::class , 'destroyUserLog'])->name('destroyUserLog'); 
+        Route::get('update-email', [ProfileController::class , 'updateEmail'])->name('profile.updateEmail'); 
+        Route::post('update-password', [ProfileController::class , 'updatePassword'])->name('profile.updatePassword'); 
+        Route::post('delete-account', [ProfileController::class , 'deleteAccount'])->name('profile.deleteAccount'); 
+        Route::get('clear-user-logs', [ProfileController::class , 'clearUserLogs'])->name('profile.clearUserLogs'); 
+        Route::get('destroy-user-log/{id}', [ProfileController::class , 'destroyUserLog'])->name('profile.destroyUserLog'); 
    }); 
    //documents
    Route::group(['prefix'=>'documents'] , function (){        
-        Route::get('electricity-documents' , [ElectricityDocumentController::class , 'indexElectricityDocument'])->name('electricityDocuments'); 
+        Route::get('electricity-documents' , [ElectricityDocumentController::class , 'index'])->name('document.electricity.index'); 
+        Route::get('electricity-documents/create' , [ElectricityDocumentController::class , 'create'])->name('document.electricity.create'); 
    });
 }); 
 
