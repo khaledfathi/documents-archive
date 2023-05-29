@@ -14,7 +14,7 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item active">Control Panel</li>
-        <li class="breadcrumb-item active"><a href="{{ route('users') }}">Users</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('user.index') }}">Users</a></li>
         <li class="breadcrumb-item active">Create</li>
     </ol>
 @endsection
@@ -36,7 +36,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('storeUser') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
                 <div class="form-group">

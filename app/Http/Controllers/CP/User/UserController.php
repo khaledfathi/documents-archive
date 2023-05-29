@@ -55,7 +55,7 @@ class UserController extends Controller
     /**
      * store new user 
      * @param StoreUserRequest $request custom request for storing new user
-     * @return mixed redirect to users page - route('users') 
+     * @return mixed redirect to users page - route('user.index') 
      */
     public function store(StoreUserRequest $request)
     {
@@ -67,7 +67,7 @@ class UserController extends Controller
         }
         $data['password']= Hash::make($request->password); 
         $this->userProvider->store($data); 
-        return redirect(route('users')); 
+        return redirect(route('user.index')); 
     }
     /**
      * create new user page
@@ -92,7 +92,7 @@ class UserController extends Controller
             Storage::disk('public')->delete('upload/'.$record->image); 
         }
         $this->userProvider->destroy($request->id);
-        // return redirect(route('users')); 
+        // return redirect(route('user.index')); 
         return back(); 
     }
     /**
