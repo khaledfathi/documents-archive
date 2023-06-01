@@ -16,7 +16,8 @@ return new class extends Migration
             $table->date('release_date')->nullable(false); 
             $table->bigInteger('consumption')->nullable(false); 
             $table->double('amount')->nullable(false); 
-            $table->string('monthes')->nullable(false); 
+            $table->integer('month')->nullable(false); 
+            $table->integer('year')->nullable(false); 
             $table->text('image')->nullable(true); 
             $table->timestamps();
             //FK

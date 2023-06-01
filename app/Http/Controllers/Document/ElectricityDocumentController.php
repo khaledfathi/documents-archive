@@ -21,16 +21,29 @@ class ElectricityDocumentController extends Controller
      * index page of electricity documents
      * @return mixed view electricity documents page
      */
-    public function index(){
-        return view('document.electricity.index'); 
+    public function index(Request $request){
+        //set year
+        $currentYear=Carbon::now()->year ; 
+        if($request->has('year')){
+            $currentYear = $request->year; 
+        }
+
+        //view bills
+        $bills = $this->electriciryProvider->index(auth()->user()->id , $currentYear); 
+        return view('document.electricity.index' , ['bills'=>$bills]); 
     }
     /**
      * create new electricity bill page 
      * @return mixed view create page for new electriciry bill 
      */
     public function create(){
-        $currentYear= Carbon::now()->year;
-        return view('document.electricity.create' , ['currentYear'=>$currentYear]); 
+        $time = Carbon::now(); 
+        $currentYear = $time->year;
+        $currentMonth = $time->month;
+        return view('document.electricity.create' , [
+            'currentYear'=>$currentYear,
+            'currentMonth'=>$currentMonth
+        ]); 
     }
     /**
      * store new electricity bill in database
@@ -38,16 +51,18 @@ class ElectricityDocumentController extends Controller
      * @return mixed back to document index page . route('document.electricity.index')
      */
     public function store(StoreElectrictyRequest $request){
-        dd($request->all()); 
+        // dd($request->all()); 
+
         $data = $this->electriciryProvider->store([
             'user_id'=>auth()->user()->id,
             'release_date'=>$request->release_date,
-            'consumpstion'=>$request->cousumption,
-            '$monthes'=>$request->monthes,
+            'consumption'=>$request->consumption,
+            'amount'=>$request->amount,
+            'month'=>$request->month,
+            'year'=>$request->year,
             'image'=>$request->image, 
             'notes'=>$request->notes
         ]);  
-        dd($data); 
         return redirect(route('document.electricity.index')); 
     }
 }

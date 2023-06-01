@@ -13,7 +13,8 @@ class ElectricityModel extends Model
         'release_date',
         'consumption',
         'amount',
-        'monthes',
+        'month',
+        'year',
         'image',
         'user_id'
     ]; 

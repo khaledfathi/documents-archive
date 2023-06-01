@@ -102,15 +102,18 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-providers.html">Providers</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-http.html">Http</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-http-requests.html">Requests</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-http-requests-document.html">Document</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-http-requests-document-electricity.html">Electricity</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    RepositoryServiceProvider
+    StoreElectrictyRequest
 
         <span class="phpdocumentor-element__extends">
-        extends <abbr title="\Illuminate\Support\ServiceProvider">ServiceProvider</abbr>
+        extends <abbr title="\Illuminate\Foundation\Http\FormRequest">FormRequest</abbr>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -124,14 +127,14 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Providers/RepositoryServiceProvider.php"><a href="files/app-providers-repositoryserviceprovider.html"><abbr title="app/Providers/RepositoryServiceProvider.php">RepositoryServiceProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php"><a href="files/app-http-requests-document-electricity-storeelectrictyrequest.html"><abbr title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php">StoreElectrictyRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">9</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Handle database as a Repositories</p>
-
+        
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -147,18 +150,25 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Providers-RepositoryServiceProvider.html#method_boot">boot()</a>
+    <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_authorize">authorize()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: bool    </span>
 </dt>
-<dd>Bootstrap services.</dd>
+<dd>Determine if the user is authorized to make this request.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Providers-RepositoryServiceProvider.html#method_register">register()</a>
+    <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_messages">messages()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: mixed    </span>
 </dt>
-<dd>Register services.</dd>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_rules">rules()</a>
+    <span>
+                                &nbsp;: array&lt;string, \Illuminate\Contracts\Validation\ValidationRule|array|string&gt;    </span>
+</dt>
+<dd>Get the validation rules that apply to the request.</dd>
 
         </dl>
 
@@ -171,7 +181,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Providers-RepositoryServiceProvider.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -179,29 +189,29 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_boot">
-        boot()
-        <a href="classes/App-Providers-RepositoryServiceProvider.html#method_boot" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_authorize">
+        authorize()
+        <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_authorize" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Providers/RepositoryServiceProvider.php"><a href="files/app-providers-repositoryserviceprovider.html"><abbr title="app/Providers/RepositoryServiceProvider.php">RepositoryServiceProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php"><a href="files/app-http-requests-document-electricity-storeelectrictyrequest.html"><abbr title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php">StoreElectrictyRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Bootstrap services.</p>
+        <p class="phpdocumentor-summary">Determine if the user is authorized to make this request.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">boot</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">authorize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
@@ -212,29 +222,62 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_register">
-        register()
-        <a href="classes/App-Providers-RepositoryServiceProvider.html#method_register" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_messages">
+        messages()
+        <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_messages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Providers/RepositoryServiceProvider.php"><a href="files/app-providers-repositoryserviceprovider.html"><abbr title="app/Providers/RepositoryServiceProvider.php">RepositoryServiceProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php"><a href="files/app-http-requests-document-electricity-storeelectrictyrequest.html"><abbr title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php">StoreElectrictyRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Register services.</p>
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">messages</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_rules">
+        rules()
+        <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_rules" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php"><a href="files/app-http-requests-document-electricity-storeelectrictyrequest.html"><abbr title="app/Http/Requests/Document/Electricity/StoreElectrictyRequest.php">StoreElectrictyRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get the validation rules that apply to the request.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">register</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">rules</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, \Illuminate\Contracts\Validation\ValidationRule|array|string&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string, \Illuminate\Contracts\Validation\ValidationRule|array|string&gt;</span>
             &mdash;
         
     
@@ -317,7 +360,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/App-Providers-RepositoryServiceProvider.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

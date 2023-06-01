@@ -2,7 +2,7 @@
 @section('title', 'Electricity-Docs')
 @section('links', '')
 @section('scripts', '')
-@section('styles','')
+@section('styles', '')
 @section('sectionName', 'Electricity')
 @section('path')
     <ol class="breadcrumb float-sm-right">
@@ -14,7 +14,8 @@
 
 @section('content')
     <div class="col d-block m-3">
-        <a href="{{route('document.electricity.create')}}" class="btn btn-block btn-primary btn-lg  col-2 " style="min-width:120px">
+        <a href="{{ route('document.electricity.create') }}" class="btn btn-block btn-primary btn-lg  col-2 "
+            style="min-width:120px">
             New Bill</a>
     </div>
     <div class="card">
@@ -24,9 +25,10 @@
         <!-- /.card-header -->
         {{-- find year --}}
         <div class="col-md-4 mt-3 mx-auto">
-            <form action="simple-results.html">
+            <form action="{{route('document.electricity.index')}}">
                 <div class="input-group">
-                    <input type="number" class="form-control form-control-lg" placeholder="Type the year" min=1900 max=9999>
+                    <input type="number" class="form-control form-control-lg" placeholder="Type the year" min=1900
+                        max=9999 name="year">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-lg btn-default">
                             <i class="fa fa-search"></i>
@@ -52,7 +54,7 @@
                                 <tr>
                                     <th class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2"
                                         rowspan="1" colspan="1" aria-sort="ascending">
-                                        Month
+                                        Month / Year
                                     </th>
                                     <th class="text-center sorting sorting_asc" tabindex="0" aria-controls="example2"
                                         rowspan="1" colspan="1" aria-sort="ascending">
@@ -82,23 +84,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="align-middle text-center">January</td>
-                                    <td class="align-middle text-center">2023/02/04</td>
-                                    <td class="align-middle text-center">244</td>
-                                    <td class="align-middle text-center">300</td>
-                                    <td class="align-middle text-center">ImageIcon</td>
-                                    <td class="align-middle text-center">
-                                        <a href="">
-                                            <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
-                                        </a>
-                                    </td>
-                                    <td class="align-middle text-center">
-                                        <a href="">
-                                            <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                @foreach ($bills as $bill)
+                                    <tr>
+                                        <td class="align-middle text-center">{{ MONTHS[$bill->month - 1] }} /
+                                            {{ $bill->year }}</td>
+                                        <td class="align-middle text-center">{{ $bill->release_date }}</td>
+                                        <td class="align-middle text-center">{{ $bill->consumption }}</td>
+                                        <td class="align-middle text-center">{{ $bill->amount }}</td>
+                                        <td class="align-middle text-center">{{ $bill->image }}</td>
+                                        <td class="align-middle text-center">
+                                            <a href="">
+                                                <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
+                                            </a>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <a href="">
+                                                <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -108,14 +113,12 @@
         <!-- /.card-body -->
     </div>
 
-    <p>table report avg paying/mont - avg consumtion (min, max , avg)</p>
-    
-    <h3>new bill</h3>
-    <p>relase data</p>
-    <p>months count</p>
-    <p>monthe/s + add button for more than 1 </p>
-    <p>consumption - kw/h</p>
-    <p>bill value</p>
-    <p>bill image </p>
-    <p>other details</p>
+
+    <p>remaining : </p>
+    <ul>
+        <li>uploading image in new bill</li>
+        <li>image buton and image page in index page</li>
+        <li>show min max avg for consumption and amount</li>
+        <li></li>
+    </ul>
 @endsection

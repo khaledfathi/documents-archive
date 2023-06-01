@@ -6,6 +6,11 @@ Search.appendIndex(
             "summary": "default\u0020user\u0020image\u0020icon\u0020,\u0020if\u0020it\u0020hasn\u0027t\u0020image",
             "url": "namespaces/default.html#constant_DEFAULT_USER_IMAGE"
         },                {
+            "fqsen": "\\MONTHS",
+            "name": "MONTHS",
+            "summary": "",
+            "url": "namespaces/default.html#constant_MONTHS"
+        },                {
             "fqsen": "\\App\\Enum\\User\\UserType",
             "name": "UserType",
             "summary": "enum\u0020for\u0020User\u0020types\u0020\u005Badmin\u0020\u007C\u0020user\u005D",
@@ -376,6 +381,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html"
         },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method___construct"
+        },                {
             "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "index\u0020page\u0020of\u0020electricity\u0020documents",
@@ -383,8 +393,68 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "",
+            "summary": "create\u0020new\u0020electricity\u0020bill\u0020page",
             "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_create"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "store\u0020new\u0020electricity\u0020bill\u0020in\u0020database",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_store"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003A\u0024electriciryProvider",
+            "name": "electriciryProvider",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#property_electriciryProvider"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\StoreElectrictyRequest",
+            "name": "StoreElectrictyRequest",
+            "summary": "",
+            "url": "classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\StoreElectrictyRequest\u003A\u003Aauthorize\u0028\u0029",
+            "name": "authorize",
+            "summary": "Determine\u0020if\u0020the\u0020user\u0020is\u0020authorized\u0020to\u0020make\u0020this\u0020request.",
+            "url": "classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_authorize"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\StoreElectrictyRequest\u003A\u003Arules\u0028\u0029",
+            "name": "rules",
+            "summary": "Get\u0020the\u0020validation\u0020rules\u0020that\u0020apply\u0020to\u0020the\u0020request.",
+            "url": "classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_rules"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\StoreElectrictyRequest\u003A\u003Amessages\u0028\u0029",
+            "name": "messages",
+            "summary": "",
+            "url": "classes/App-Http-Requests-Document-Electricity-StoreElectrictyRequest.html#method_messages"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract",
+            "name": "ElectricityRepositoryContract",
+            "summary": "",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "show\u0020index\u0020of\u0020all\u0020electricity\u0020bill\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_index"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "show\u0020index\u0020of\u0020all\u0020electricity\u0020bill\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_store"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository",
+            "name": "ElectriciryRepository",
+            "summary": "",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "show\u0020index\u0020of\u0020all\u0020electricity\u0020bill\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_index"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "show\u0020index\u0020of\u0020all\u0020electricity\u0020bill\u0020for\u0020specific\u0020user",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_store"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -451,15 +521,25 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-http-controllers-profile.html"
         },                {
-            "fqsen": "\\App\\Http\\Requests\\Profile",
-            "name": "Profile",
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity",
+            "name": "Electricity",
             "summary": "",
-            "url": "namespaces/app-http-requests-profile.html"
+            "url": "namespaces/app-http-requests-document-electricity.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document",
+            "name": "Document",
+            "summary": "",
+            "url": "namespaces/app-http-requests-document.html"
         },                {
             "fqsen": "\\App\\Http\\Requests",
             "name": "Requests",
             "summary": "",
             "url": "namespaces/app-http-requests.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Profile",
+            "name": "Profile",
+            "summary": "",
+            "url": "namespaces/app-http-requests-profile.html"
         },                {
             "fqsen": "\\App\\Http\\Requests\\User",
             "name": "User",
@@ -471,10 +551,10 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-providers.html"
         },                {
-            "fqsen": "\\App\\Repository\\Contracts\\Log",
-            "name": "Log",
+            "fqsen": "\\App\\Repository\\Contracts\\Document",
+            "name": "Document",
             "summary": "",
-            "url": "namespaces/app-repository-contracts-log.html"
+            "url": "namespaces/app-repository-contracts-document.html"
         },                {
             "fqsen": "\\App\\Repository\\Contracts",
             "name": "Contracts",
@@ -486,10 +566,20 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-repository.html"
         },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Log",
+            "name": "Log",
+            "summary": "",
+            "url": "namespaces/app-repository-contracts-log.html"
+        },                {
             "fqsen": "\\App\\Repository\\Contracts\\User",
             "name": "User",
             "summary": "",
             "url": "namespaces/app-repository-contracts-user.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Document",
+            "name": "Document",
+            "summary": "",
+            "url": "namespaces/app-repository-document.html"
         },                {
             "fqsen": "\\App\\Repository\\Log",
             "name": "Log",
