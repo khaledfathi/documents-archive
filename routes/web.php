@@ -53,9 +53,12 @@ Route::middleware('auth')->group(function (){
         Route::get('destroy-user-log/{id}', [ProfileController::class , 'destroyUserLog'])->name('profile.destroyUserLog'); 
    }); 
    //documents
-   Route::group(['prefix'=>'documents'] , function (){        
+   Route::group(['prefix'=>'documents'] , function (){
+     Route::group(['prefix'=>'electricity'],function (){
         Route::get('electricity-documents' , [ElectricityDocumentController::class , 'index'])->name('document.electricity.index'); 
         Route::get('electricity-documents/create' , [ElectricityDocumentController::class , 'create'])->name('document.electricity.create'); 
+        Route::post('electricity-documents/store' , [ElectricityDocumentController::class , 'store'])->name('document.electricity.store'); 
+     }) ;
    });
 }); 
 
