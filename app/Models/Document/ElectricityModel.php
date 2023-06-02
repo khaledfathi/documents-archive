@@ -16,6 +16,7 @@ class ElectricityModel extends Model
         'month',
         'year',
         'image',
+        'notes',
         'user_id'
     ]; 
 }

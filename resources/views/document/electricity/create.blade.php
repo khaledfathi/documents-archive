@@ -66,7 +66,7 @@
                     <label>Month</label>
                     <select class="form-control" name="month" required>
                         @foreach (MONTHS as $month)
-                            @if ($currentMonth == $loop->index + 1)
+                            @if (CURRENT_MONTH == $loop->index + 1)
                                 <option selected value="{{ $loop->index + 1 }}">{{ $month }}</option>
                             @else
                                 <option value="{{ $loop->index + 1 }}">{{ $month }}</option>
@@ -79,7 +79,7 @@
                 <div class="form-group col-6">
                     <label for="relaseDate">year</label>
                     <input type="number" class="form-control" placeholder="Year" min=1900 name="year"
-                        value="{{ $currentYear }}" required>
+                        value="{{ CURRENT_YEAR }}" required>
                 </div>
 
                 <div class="form-group col-6">
@@ -91,6 +91,7 @@
 
             <div class="card-footer col-12">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{route('document.electricity.index')}}" class="btn btn-danger">Cancle</a>
             </div>
         </form>
     </div>

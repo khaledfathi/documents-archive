@@ -1,4 +1,5 @@
 <?php 
+use Carbon\Carbon;
 /**
  * default user image icon , if it hasn't image 
  */
@@ -17,3 +18,5 @@ define ('MONTHS' , [
     '11-November',
     '12-December'
 ]); 
+define ('CURRENT_YEAR' , Carbon::now()->year); 
+define ('CURRENT_MONTH' , Carbon::now()->month); 

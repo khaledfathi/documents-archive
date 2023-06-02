@@ -27,7 +27,7 @@ class StoreElectrictyRequest extends FormRequest
             'release_date'=>'date|required', 
             'consumption'=>'numeric|required', 
             'amount'=>'required|integer|gt:0',
-            'month'=>['required','integer','between:1,12',Rule::unique('electricity_bills')->where('year' , $this->year)] ,
+            'month'=>['required','integer','between:1,12',Rule::unique('electricity_bills')->where('year' , $this->year)->where('user_id',auth()->user()->id)] ,
             'year'=>'required|integer|gt:1900' ,
             'image'=>'required|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000', 
         ];

@@ -11,6 +11,16 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#constant_MONTHS"
         },                {
+            "fqsen": "\\CURRENT_YEAR",
+            "name": "CURRENT_YEAR",
+            "summary": "",
+            "url": "namespaces/default.html#constant_CURRENT_YEAR"
+        },                {
+            "fqsen": "\\CURRENT_MONTH",
+            "name": "CURRENT_MONTH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_CURRENT_MONTH"
+        },                {
             "fqsen": "\\App\\Enum\\User\\UserType",
             "name": "UserType",
             "summary": "enum\u0020for\u0020User\u0020types\u0020\u005Badmin\u0020\u007C\u0020user\u005D",
@@ -386,6 +396,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method___construct"
         },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003AuploadImage\u0028\u0029",
+            "name": "uploadImage",
+            "summary": "handle\u0020user\u0027s\u0020image\u0020upload",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_uploadImage"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003AisBelongToUser\u0028\u0029",
+            "name": "isBelongToUser",
+            "summary": "check\u0020if\u0020this\u0020record\u0020belong\u0020to\u0020the\u0020current\u0020logeding\u0020user\u0020or\u0020not",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_isBelongToUser"
+        },                {
             "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "index\u0020page\u0020of\u0020electricity\u0020documents",
@@ -400,6 +420,21 @@ Search.appendIndex(
             "name": "store",
             "summary": "store\u0020new\u0020electricity\u0020bill\u0020in\u0020database",
             "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_store"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Adestroy\u0028\u0029",
+            "name": "destroy",
+            "summary": "destroy\u0020electricity\u0020bill\u0020action",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_destroy"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Aedit\u0028\u0029",
+            "name": "edit",
+            "summary": "edit\u0020electricity\u0020bill\u0020page",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_edit"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020electricity\u0020bill\u0020action",
+            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_update"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003A\u0024electriciryProvider",
             "name": "electriciryProvider",
@@ -441,6 +476,21 @@ Search.appendIndex(
             "summary": "show\u0020index\u0020of\u0020all\u0020electricity\u0020bill\u0020for\u0020specific\u0020user",
             "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_store"
         },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003Adestroy\u0028\u0029",
+            "name": "destroy",
+            "summary": "destroy\u0020electricity\u0020bill\u0020by\u0020id",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_destroy"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003Ashow\u0028\u0029",
+            "name": "show",
+            "summary": "show\u0020electricity\u0020bill\u0020by\u0020id",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_show"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020electricity\u0020bill",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_update"
+        },                {
             "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository",
             "name": "ElectriciryRepository",
             "summary": "",
@@ -455,6 +505,21 @@ Search.appendIndex(
             "name": "store",
             "summary": "show\u0020index\u0020of\u0020all\u0020electricity\u0020bill\u0020for\u0020specific\u0020user",
             "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_store"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003Adestroy\u0028\u0029",
+            "name": "destroy",
+            "summary": "destroy\u0020electricity\u0020bill\u0020by\u0020id",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_destroy"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003Ashow\u0028\u0029",
+            "name": "show",
+            "summary": "show\u0020electricity\u0020bill\u0020by\u0020id",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_show"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020electricity\u0020bill",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_update"
         },                {
             "fqsen": "\\",
             "name": "\\",

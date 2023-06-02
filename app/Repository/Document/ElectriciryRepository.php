@@ -20,4 +20,22 @@ class ElectriciryRepository implements ElectricityRepositoryContract{
     {
         return ElectricityModel::create($data); 
     } 
+    public function destroy(int $id , int $user_id=null):bool
+    {
+        if ($user_id){
+            return ElectricityModel::where('id' , $id)->where('user_id' , $user_id )->delete(); 
+        }
+        $found = ElectricityModel::find($id); 
+        return ($found)? $found->delete() : false  ; 
+    } 
+    public function show ($id):object | null
+    {
+        return ElectricityModel::where('id',$id)->first(); 
+    }
+
+    public function update(array $data , int $id): bool
+    {
+        $found = ElectricityModel::find($id); 
+        return ($found) ? $found->update($data) : false ; 
+    } 
 }

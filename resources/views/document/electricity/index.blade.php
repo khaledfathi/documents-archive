@@ -18,17 +18,25 @@
             style="min-width:120px">
             New Bill</a>
     </div>
+    @if (session('ok'))
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-check"></i>Updated</h5>
+            {{session('ok')}}
+        </div>
+    @endif
+
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Electricity Bills for year 2023</h3>
+            <h3 class="card-title">Electricity Bills for year {{ $currentYear }}</h3>
         </div>
         <!-- /.card-header -->
         {{-- find year --}}
         <div class="col-md-4 mt-3 mx-auto">
-            <form action="{{route('document.electricity.index')}}">
+            <form action="{{ route('document.electricity.index') }}">
                 <div class="input-group">
-                    <input type="number" class="form-control form-control-lg" placeholder="Type the year" min=1900
-                        max=9999 name="year">
+                    <input type="number" class="form-control form-control-lg" placeholder="Type the year" min=1900 max=9999
+                        name="year">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-lg btn-default">
                             <i class="fa fa-search"></i>
@@ -91,14 +99,18 @@
                                         <td class="align-middle text-center">{{ $bill->release_date }}</td>
                                         <td class="align-middle text-center">{{ $bill->consumption }}</td>
                                         <td class="align-middle text-center">{{ $bill->amount }}</td>
-                                        <td class="align-middle text-center">{{ $bill->image }}</td>
                                         <td class="align-middle text-center">
-                                            <a href="">
+                                            <a href="{{ asset('storage/electricity/' . $bill->image) }}">
+                                                <i class="far fa-image fa-lg" style="color: #1a5fb4;"></i>
+                                            </a>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <a href="{{ route('document.electricity.edit', $bill->id) }}">
                                                 <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
                                             </a>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="">
+                                            <a href="{{ route('document.electricity.destroy', $bill->id) }}">
                                                 <i class="fas fa-trash-alt fa-lg" style="color: #ff0000;cursor:pointer"></i>
                                             </a>
                                         </td>
@@ -116,9 +128,7 @@
 
     <p>remaining : </p>
     <ul>
-        <li>uploading image in new bill</li>
-        <li>image buton and image page in index page</li>
         <li>show min max avg for consumption and amount</li>
-        <li></li>
+        {{-- <li></li> --}}
     </ul>
 @endsection

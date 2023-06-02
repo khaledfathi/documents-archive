@@ -118,6 +118,9 @@ class UserController extends Controller
      * @return mixed back to previous page 
      */
     public function update(UpdateUserRequest $request){
+        if(auth()->user()->id == $request->id && $request->type != 'admin'){
+            return back()->withErrors('You can\'t change your type, beacuse you are logedin !  '); 
+        }
         $data=[
             'name'=>$request->name,
             'email'=>$request->email,
