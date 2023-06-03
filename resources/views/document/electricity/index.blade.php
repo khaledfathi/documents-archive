@@ -129,6 +129,9 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+        </div>
                     <div class="d-flex flex-row flex-wrap col-12 justify-content-center flex-wrap" >
                         <div class="info-box mb-3 bg-info mx-2 col-5" style="min-width:300px">
                             <span class="info-box-icon"><i class="fas fa-bolt fa-lg"></i></i></span>
@@ -151,9 +154,6 @@
                             <!-- /.info-box-content -->
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
         <!-- /.card-body -->
     </div>
 @endsection
