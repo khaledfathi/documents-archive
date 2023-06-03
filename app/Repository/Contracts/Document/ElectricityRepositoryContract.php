@@ -18,10 +18,10 @@ interface  ElectricityRepositoryContract{
     /**
      * destroy electricity bill by id  
      * @param int $id id of electriciy bill 
-     * @param int $user_id use this user id to destroy electricity bill belong to this user
+     * @param int $userId use this user id to destroy electricity bill belong to this user
      * @return bool true for success | false for fail
      */
-    public function destroy(int $id , int $user_id=null):bool; 
+    public function destroy(int $id , int $userId=null):bool; 
     /**
      * show electricity bill by id 
      * @param int $id electricity bill id 
@@ -35,5 +35,28 @@ interface  ElectricityRepositoryContract{
      * @return object|null return electricity bill | null 
      */
     public function update(array $data , int $id): bool; 
-
+    /**
+     * get the minimum value of selected column 
+     * @param string $column target column to be calculate 
+     * @param int $year calculate this year only 
+     * @param int $userId calculate rows belong to this user id
+     * @return float minimum value 
+     */
+    public function statisticMin (string $column , int $year=null , $userId=null ):float; 
+    /**
+     * get the maxmum value of selected column 
+     * @param string $column target column to be calculate 
+     * @param int $year calculate this year only 
+     * @param int $userId calculate rows belong to this user id
+     * @return float maxmum  value 
+     */
+    public function statisticMax (string $column , int $year=null , $userId=null ):float; 
+    /**
+     * get the average value of selected column 
+     * @param string $column target column to be calculate 
+     * @param int $year calculate this year only 
+     * @param int $userId calculate rows belong to this user id
+     * @return float avgerage  value 
+     */
+    public function statisticAvg (string $column , int $year=null , $userId=null ):float; 
 }

@@ -40,30 +40,30 @@
             @csrf
             <input type="hidden" name="id" value="{{$record->id}}">
             <div class="card-body d-flex flex-wrap">
-                <div class="form-group col-6">
+                <div class="form-group col-md-6">
                     <label for="relaseDate">Relase Date</label>
                     <input type="date" class="form-control" placeholder="Relase Date" name="release_date" required value="{{$record->release_date}}">
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-md-6">
                     <label for="relaseDate">Counsumption KW/H</label>
                     <input type="number" class="form-control" placeholder="Consumption" min=1 name="consumption" required value="{{$record->consumption}}">
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-md-6">
                     <label for="relaseDate">Amount EGP</label>
                     <input type="number" class="form-control" placeholder="Amount" min=1 name="amount" required value="{{$record->amount}}">
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-md-6">
                     <label for="exampleInputFile">Bill Image</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile" name="image" required>
+                            <input type="file" class="custom-file-input" id="exampleInputFile" name="image" >
                             <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                         </div>
                     </div>
                 </div>
 
                 {{-- months checkboxes --}}
-                <div class="form-group col-6">
+                <div class="form-group col-md-6">
                     <label>Month</label>
                     <select class="form-control" name="month" required>
                         @foreach (MONTHS as $month)
@@ -77,13 +77,13 @@
                 </div>
                 {{-- / months checkboxes --}}
 
-                <div class="form-group col-6">
+                <div class="form-group col-md-6">
                     <label for="relaseDate">year</label>
                     <input type="number" class="form-control" placeholder="Year" min=1900 name="year"
                         value="{{ $record->year }}" required>
                 </div>
 
-                <div class="form-group col-6">
+                <div class="form-group col-md-6">
                     <label for="exampleInputFile">Notes</label>
                     <textarea class="form-control w-100 h-100" style="resize:none;" placeholder="Notes" name="notes">{{$record->notes}}</textarea>
                 </div>
@@ -92,7 +92,7 @@
 
             <div class="card-footer col-12">
                 <button type="submit" class="btn btn-success">Submit</button>
-                <a href="{{url()->previous()}}" class="btn btn-danger">Cancle</a>
+                <a href="{{route('document.electricity.index').'?year='.$record->year}}" class="btn btn-danger">Cancle</a>
             </div>
         </form>
     </div>

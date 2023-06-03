@@ -17,8 +17,8 @@
         <h3><i class="icon fas fa-info"></i> About Application</h3>
         <h5>- Documents Archive Application - </h5>
         <p style="font-size:15pt;">
-            is a simple application to manage your home documents such as invoices , for example :
-            invoices of electricity , water , gas , land line ... etc , also it can handle general Documents like :
+            is a simple application to manage your home documents such as bills , for example :
+            bills of electricity , water , gas , land line ... etc , also it can handle general Documents like :
             Legal docs , medical docs , educational docs such as certificates ... etc .
         </p>
         <p style="font-size:15pt;">

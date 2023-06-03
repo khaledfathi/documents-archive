@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CP\User\UserController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Document\ElectricityDocumentController;
+use App\Http\Controllers\Document\WaterDocumentController;
 use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +55,7 @@ Route::middleware('auth')->group(function (){
    }); 
    //documents
    Route::group(['prefix'=>'documents'] , function (){
+    //electricity
      Route::group(['prefix'=>'electricity'],function (){
         Route::get('electricity-documents/' , [ElectricityDocumentController::class , 'index'])->name('document.electricity.index'); 
         Route::get('electricity-documents/create' , [ElectricityDocumentController::class , 'create'])->name('document.electricity.create'); 
@@ -62,6 +64,10 @@ Route::middleware('auth')->group(function (){
         Route::get('electricity-documents/edit/{id}' , [ElectricityDocumentController::class , 'edit'])->name('document.electricity.edit'); 
         Route::post('electricity-documents/update' , [ElectricityDocumentController::class , 'update'])->name('document.electricity.update'); 
      }) ;
+     //water
+     Route::group(['prefix'=>'water'], function (){
+        Route::get('' , [WaterDocumentController::class , 'index'])->name('document.water.index'); 
+     }) ; 
    });
 }); 
 

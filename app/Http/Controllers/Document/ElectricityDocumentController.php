@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Document;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Document\Electricity\StoreElectrictyRequest;
+use App\Http\Requests\Document\Electricity\UpdateElectricityRequest;
 use App\Repository\Contracts\Document\ElectricityRepositoryContract;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -11,6 +12,9 @@ use Illuminate\Support\Facades\Storage;
 
 class ElectricityDocumentController extends Controller
 {
+    /**
+     * Electricity Service Provider [Electricity repository]
+     */
     private ElectricityRepositoryContract $electriciryProvider ; 
     public function __construct(
         ElectricityRepositoryContract $electricityProvider 
@@ -18,6 +22,8 @@ class ElectricityDocumentController extends Controller
     {
         $this->electriciryProvider = $electricityProvider;    
     }
+
+    //PRIVATE METHODS
     /**
      * handle user's image upload 
      * @param mixed $imageFile image file - get it from request 
@@ -42,7 +48,7 @@ class ElectricityDocumentController extends Controller
      * @param int $recordId electricity bill record id 
      * @return bool true = belong to user | false = NOT belong to user
      */
-    public function isBelongToUser(int $recordId): bool 
+    private function isBelongToUser(int $recordId): bool 
     {
         $record = $this->electriciryProvider->show($recordId); 
         if ($record){
@@ -50,6 +56,8 @@ class ElectricityDocumentController extends Controller
         }
         return false ; 
     }
+
+    //PUBLIC METHODS
     /**
      * index page of electricity documents
      * @param Request $name client request 
@@ -63,7 +71,25 @@ class ElectricityDocumentController extends Controller
         }
         //view bills
         $bills = $this->electriciryProvider->index(auth()->user()->id , $currentYear); 
-        return view('document.electricity.index' , ['bills'=>$bills , 'currentYear'=>$currentYear]); 
+        //statistics for consumption
+        $ConsumptionStatistics = (object)[
+            'min'=>$this->electriciryProvider->statisticMin('consumption',$currentYear , auth()->user()->id),
+            'max'=>$this->electriciryProvider->statisticMax('consumption',$currentYear , auth()->user()->id),
+            'avg'=>$this->electriciryProvider->statisticAvg('consumption',$currentYear , auth()->user()->id),
+        ]; 
+        //statistics for amount
+        $amountStatistics = (object)[
+            'min'=>$this->electriciryProvider->statisticMin('amount', $currentYear , auth()->user()->id),
+            'max'=>$this->electriciryProvider->statisticMax('amount', $currentYear , auth()->user()->id),
+            'avg'=>$this->electriciryProvider->statisticAvg('amount', $currentYear , auth()->user()->id),
+        ]; 
+        
+        return view('document.electricity.index' , [
+            'bills'=>$bills , 
+            'currentYear'=>$currentYear,
+            'consumptionStatistics'=>$ConsumptionStatistics,
+            'amountStatistics'=>$amountStatistics
+        ]); 
     }
     /**
      * create new electricity bill page 
@@ -90,7 +116,7 @@ class ElectricityDocumentController extends Controller
             'notes'=>$request->notes
         ]);  
         $message = 'The Bill of ( '.MONTHS[$request->month-1].' / '.$request->year.' ) has been Created. '; 
-        return redirect(route('document.electricity.index'))->with(['ok'=>$message]); 
+        return redirect(route('document.electricity.index').'?year='.$request->year)->with(['ok'=>$message]); 
     }
     /**
      * destroy electricity bill action
@@ -128,7 +154,7 @@ class ElectricityDocumentController extends Controller
      * @param Request $request client request (to get electricity bill id and data to be update)
      * @return mixed back to previous page
      */
-    public function update(Request $request){
+    public function update(UpdateElectricityRequest $request){
         //make sure that is this record belong to current user
         $record = $this->electriciryProvider->show($request->id); 
         //prepearing data 
@@ -150,7 +176,7 @@ class ElectricityDocumentController extends Controller
             $this->electriciryProvider->update($data ,$request->id); 
             //redirect to documents page
             $message = 'The Bill of ( '.MONTHS[$request->month-1].' / '.$request->year.' ) has been updated. '; 
-            return redirect(route('document.electricity.index'))->with(['ok'=>$message]); 
+            return redirect(route('document.electricity.index').'?year='.$request->year)->with(['ok'=>$message]); 
         }
         return back(); 
     }

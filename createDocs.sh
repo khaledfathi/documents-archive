@@ -6,5 +6,6 @@
 "app/Enum/User/",\
 "app/constants.php",\
 "app/Providers/RepositoryServiceProvider.php",\
-"app/constants.php"\
+"app/constants.php",\
+"app/Rules/"\
  -t public/docs

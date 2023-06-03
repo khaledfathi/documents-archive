@@ -438,7 +438,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003A\u0024electriciryProvider",
             "name": "electriciryProvider",
-            "summary": "",
+            "summary": "Electricity\u0020Service\u0020Provider\u0020\u005BElectricity\u0020repository\u005D",
             "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#property_electriciryProvider"
         },                {
             "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\StoreElectrictyRequest",
@@ -491,6 +491,21 @@ Search.appendIndex(
             "summary": "update\u0020electricity\u0020bill",
             "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_update"
         },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003AstatisticMin\u0028\u0029",
+            "name": "statisticMin",
+            "summary": "get\u0020the\u0020minimum\u0020value\u0020of\u0020selected\u0020column",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_statisticMin"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003AstatisticMax\u0028\u0029",
+            "name": "statisticMax",
+            "summary": "get\u0020the\u0020maxmum\u0020value\u0020of\u0020selected\u0020column",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_statisticMax"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\ElectricityRepositoryContract\u003A\u003AstatisticAvg\u0028\u0029",
+            "name": "statisticAvg",
+            "summary": "get\u0020the\u0020average\u0020value\u0020of\u0020selected\u0020column",
+            "url": "classes/App-Repository-Contracts-Document-ElectricityRepositoryContract.html#method_statisticAvg"
+        },                {
             "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository",
             "name": "ElectriciryRepository",
             "summary": "",
@@ -520,6 +535,71 @@ Search.appendIndex(
             "name": "update",
             "summary": "update\u0020electricity\u0020bill",
             "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_update"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003AprepearStatistic\u0028\u0029",
+            "name": "prepearStatistic",
+            "summary": "",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_prepearStatistic"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003AstatisticMin\u0028\u0029",
+            "name": "statisticMin",
+            "summary": "get\u0020the\u0020minimum\u0020value\u0020of\u0020selected\u0020column",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_statisticMin"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003AstatisticMax\u0028\u0029",
+            "name": "statisticMax",
+            "summary": "get\u0020the\u0020maxmum\u0020value\u0020of\u0020selected\u0020column",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_statisticMax"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\ElectriciryRepository\u003A\u003AstatisticAvg\u0028\u0029",
+            "name": "statisticAvg",
+            "summary": "get\u0020the\u0020average\u0020value\u0020of\u0020selected\u0020column",
+            "url": "classes/App-Repository-Document-ElectriciryRepository.html#method_statisticAvg"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\UpdateElectricityRequest",
+            "name": "UpdateElectricityRequest",
+            "summary": "",
+            "url": "classes/App-Http-Requests-Document-Electricity-UpdateElectricityRequest.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\UpdateElectricityRequest\u003A\u003Aauthorize\u0028\u0029",
+            "name": "authorize",
+            "summary": "Determine\u0020if\u0020the\u0020user\u0020is\u0020authorized\u0020to\u0020make\u0020this\u0020request.",
+            "url": "classes/App-Http-Requests-Document-Electricity-UpdateElectricityRequest.html#method_authorize"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Electricity\\UpdateElectricityRequest\u003A\u003Arules\u0028\u0029",
+            "name": "rules",
+            "summary": "Get\u0020the\u0020validation\u0020rules\u0020that\u0020apply\u0020to\u0020the\u0020request.",
+            "url": "classes/App-Http-Requests-Document-Electricity-UpdateElectricityRequest.html#method_rules"
+        },                {
+            "fqsen": "\\App\\Rules\\Document\\Electricity\\UniqueMonth",
+            "name": "UniqueMonth",
+            "summary": "this\u0020validation\u0020class\u0020is\u0020for\u0020check\u0020duplicated\u0020month\u0020on\u0020update\u0020with\u0020exclude\u0020the\u0020current\u0020month\u0020in\u0020record",
+            "url": "classes/App-Rules-Document-Electricity-UniqueMonth.html"
+        },                {
+            "fqsen": "\\App\\Rules\\Document\\Electricity\\UniqueMonth\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Rules-Document-Electricity-UniqueMonth.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Rules\\Document\\Electricity\\UniqueMonth\u003A\u003Avalidate\u0028\u0029",
+            "name": "validate",
+            "summary": "Run\u0020the\u0020validation\u0020rule.",
+            "url": "classes/App-Rules-Document-Electricity-UniqueMonth.html#method_validate"
+        },                {
+            "fqsen": "\\App\\Rules\\Document\\Electricity\\UniqueMonth\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "record\u0020id",
+            "url": "classes/App-Rules-Document-Electricity-UniqueMonth.html#property_id"
+        },                {
+            "fqsen": "\\App\\Rules\\Document\\Electricity\\UniqueMonth\u003A\u003A\u0024year",
+            "name": "year",
+            "summary": "year\u0020\u0028from\u0020form\u0029",
+            "url": "classes/App-Rules-Document-Electricity-UniqueMonth.html#property_year"
+        },                {
+            "fqsen": "\\App\\Rules\\Document\\Electricity\\UniqueMonth\u003A\u003A\u0024userId",
+            "name": "userId",
+            "summary": "current\u0020logedin\u0020user\u0020id",
+            "url": "classes/App-Rules-Document-Electricity-UniqueMonth.html#property_userId"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -655,5 +735,20 @@ Search.appendIndex(
             "name": "User",
             "summary": "",
             "url": "namespaces/app-repository-user.html"
+        },                {
+            "fqsen": "\\App\\Rules\\Document\\Electricity",
+            "name": "Electricity",
+            "summary": "",
+            "url": "namespaces/app-rules-document-electricity.html"
+        },                {
+            "fqsen": "\\App\\Rules\\Document",
+            "name": "Document",
+            "summary": "",
+            "url": "namespaces/app-rules-document.html"
+        },                {
+            "fqsen": "\\App\\Rules",
+            "name": "Rules",
+            "summary": "",
+            "url": "namespaces/app-rules.html"
         }            ]
 );
