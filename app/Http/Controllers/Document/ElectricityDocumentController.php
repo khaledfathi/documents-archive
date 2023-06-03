@@ -65,10 +65,7 @@ class ElectricityDocumentController extends Controller
      */
     public function index(Request $request){
         //set year
-        $currentYear=CURRENT_YEAR;  
-        if($request->has('year')){
-            $currentYear = $request->year; 
-        }
+        ($request->has('year'))? $currentYear = $request->year : $currentYear= CURRENT_YEAR;         
         //view bills
         $bills = $this->electriciryProvider->index(auth()->user()->id , $currentYear); 
         //statistics for consumption

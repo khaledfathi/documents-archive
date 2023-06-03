@@ -1,25 +1,25 @@
 @extends('layout.main')
-@section('title', 'Electricity-Docs')
+@section('title', 'Water-Docs')
 @section('links', '')
 @section('scripts', '')
 @section('styles', '')
-@section('sectionName', 'Electricity')
+@section('sectionName', 'Water')
 @section('path')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item">Documents</li>
-        <li class="breadcrumb-item active"><a href="{{ route('document.electricity.index') }}">Electricity Docs</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('document.water.index') }}">Water Docs</a></li>
     </ol>
 @endsection
 
 @section('content')
     <div class="col d-block m-3">
-        <a href="{{ route('document.electricity.create') }}" class="btn btn-block btn-primary btn-lg  col-2 "
+        <a href="{{ route('document.water.create') }}" class="btn btn-block btn-primary btn-lg  col-2 "
             style="min-width:120px">
             New Bill</a>
     </div>
     @if (session('ok'))
-        <div class="alert alert-success alert-dismissible">
+        <div class="alert alert-success alert-dismissible"$>
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h5><i class="icon fas fa-check"></i>Updated</h5>
             {{ session('ok') }}
@@ -28,12 +28,12 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Electricity Bills for year {{ $currentYear }}</h3>
+            <h3 class="card-title">Water Bills for year {{ $currentYear }}</h3>
         </div>
         <!-- /.card-header -->
         {{-- find year --}}
         <div class="col-md-4 mt-3 mx-auto">
-            <form action="{{ route('document.electricity.index') }}">
+            <form action="{{ route('document.water.index') }}">
                 <div class="input-group">
                     <input type="number" class="form-control form-control-lg" placeholder="Type the year" min=1900 max=9999
                         name="year" value="{{ $currentYear }}">
@@ -41,7 +41,7 @@
                         <button type="submit" class="btn btn-lg btn-default">
                             <i class="fa fa-search"></i>
                         </button>
-                        <a href="{{ route('document.electricity.index') . '?year=' . CURRENT_YEAR }}"
+                        <a href="{{ route('document.water.index') . '?year=' . CURRENT_YEAR }}"
                             class="btn btn-lg btn-default ml-3">
                             {{ CURRENT_YEAR }}
                         </a>
@@ -75,7 +75,7 @@
                                     <th class="text-center sorting sorting_asc align-middle" tabindex="0"
                                         aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending"
                                         width="15%">
-                                        Consumption KW/H
+                                        Consumption M<sup>3</sup>
                                     </th>
                                     <th class="text-center sorting sorting_asc align-middle" tabindex="0"
                                         aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending"
@@ -101,7 +101,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($bills as $bill)
+                                {{-- @foreach ($bills as $bill)
                                     <tr>
                                         <td class="align-middle text-center">{{ MONTHS[$bill->month - 1] }} /
                                             {{ $bill->year }}</td>
@@ -125,18 +125,18 @@
                                             </a>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
                     <div class="d-flex flex-row flex-wrap col-12 justify-content-center flex-wrap" >
                         <div class="info-box mb-3 bg-info mx-2 col-5" style="min-width:300px">
-                            <span class="info-box-icon"><i class="fas fa-bolt fa-lg"></i></i></span>
+                            <span class="info-box-icon"><i class="fas fa-faucet fa-lg"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Counsumption</span>
-                                <span class="info-box-number">Min : {{$consumptionStatistics->min}} KW/H</span>
+                                {{-- <span class="info-box-number">Min : {{$consumptionStatistics->min}} KW/H</span>
                                 <span class="info-box-number">Max : {{$consumptionStatistics->max}} KW/H</span>
-                                <span class="info-box-number">Avg : {{$consumptionStatistics->avg}} KW/H</span>
+                                <span class="info-box-number">Avg : {{$consumptionStatistics->avg}} KW/H</span> --}}
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -144,9 +144,9 @@
                             <span class="info-box-icon"><i class="fas fa-dollar-sign fa-lg"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Bil Value</span>
-                                <span class="info-box-number">Min : {{$amountStatistics->min}} EGP</span>
+                                {{-- <span class="info-box-number">Min : {{$amountStatistics->min}} EGP</span>
                                 <span class="info-box-number">Max : {{$amountStatistics->max}} EGP</span>
-                                <span class="info-box-number">Avg : {{$amountStatistics->avg}} EGP</span>
+                                <span class="info-box-number">Avg : {{$amountStatistics->avg}} EGP</span> --}}
                             </div>
                             <!-- /.info-box-content -->
                         </div>

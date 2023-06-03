@@ -132,28 +132,28 @@
                 </div>
             </div>
         </div>
-                    <div class="d-flex flex-row flex-wrap col-12 justify-content-center flex-wrap" >
-                        <div class="info-box mb-3 bg-info mx-2 col-5" style="min-width:300px">
-                            <span class="info-box-icon"><i class="fas fa-bolt fa-lg"></i></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Counsumption</span>
-                                <span class="info-box-number">Min : {{$consumptionStatistics->min}} KW/H</span>
-                                <span class="info-box-number">Max : {{$consumptionStatistics->max}} KW/H</span>
-                                <span class="info-box-number">Avg : {{$consumptionStatistics->avg}} KW/H</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <div class="info-box mb-3 bg-info mx-2 col-5" style="min-width:300px">
-                            <span class="info-box-icon"><i class="fas fa-dollar-sign fa-lg"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Bil Value</span>
-                                <span class="info-box-number">Min : {{$amountStatistics->min}} EGP</span>
-                                <span class="info-box-number">Max : {{$amountStatistics->max}} EGP</span>
-                                <span class="info-box-number">Avg : {{$amountStatistics->avg}} EGP</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                    </div>
+        <div class="d-flex flex-row flex-wrap col-12 justify-content-center flex-wrap">
+            <div class="info-box mb-3 bg-info mx-2 col-5" style="min-width:300px">
+                <span class="info-box-icon"><i class="fas fa-bolt fa-lg"></i></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Counsumption</span>
+                    <span class="info-box-number">Min : {{ $consumptionStatistics->min }} KW/H</span>
+                    <span class="info-box-number">Max : {{ $consumptionStatistics->max }} KW/H</span>
+                    <span class="info-box-number">Avg : {{ $consumptionStatistics->avg }} KW/H</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <div class="info-box mb-3 bg-info mx-2 col-5" style="min-width:300px">
+                <span class="info-box-icon"><i class="fas fa-dollar-sign fa-lg"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Bil Value</span>
+                    <span class="info-box-number">Min : {{ $amountStatistics->min }} EGP</span>
+                    <span class="info-box-number">Max : {{ $amountStatistics->max }} EGP</span>
+                    <span class="info-box-number">Avg : {{ $amountStatistics->avg }} EGP</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+        </div>
         <!-- /.card-body -->
     </div>
 @endsection

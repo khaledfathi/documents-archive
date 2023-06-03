@@ -66,7 +66,9 @@ Route::middleware('auth')->group(function (){
      }) ;
      //water
      Route::group(['prefix'=>'water'], function (){
-        Route::get('' , [WaterDocumentController::class , 'index'])->name('document.water.index'); 
+        Route::get('water-document' , [WaterDocumentController::class , 'index'])->name('document.water.index'); 
+        Route::get('water-document/create' , [WaterDocumentController::class , 'create'])->name('document.water.create'); 
+        Route::post('water-document/store' , [WaterDocumentController::class , 'store'])->name('document.water.store'); 
      }) ; 
    });
 }); 
