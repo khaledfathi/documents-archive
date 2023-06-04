@@ -32,7 +32,7 @@
     @endif
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Store Electricity Bill</h3>
+            <h3 class="card-title">Store Water Bill</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -44,7 +44,7 @@
                     <input type="date" class="form-control" placeholder="Relase Date" name="release_date" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="relaseDate">Counsumption KW/H</label>
+                    <label for="relaseDate">Counsumption M<sup>3</sup></label>
                     <input type="number" class="form-control" placeholder="Consumption" min=1 name="consumption" required>
                 </div>
                 <div class="form-group col-md-6">

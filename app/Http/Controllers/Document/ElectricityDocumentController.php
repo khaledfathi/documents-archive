@@ -9,9 +9,11 @@ use App\Repository\Contracts\Document\ElectricityRepositoryContract;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Helper\GeneralHelp; 
 
 class ElectricityDocumentController extends Controller
 {
+    use GeneralHelp; 
     /**
      * Electricity Service Provider [Electricity repository]
      */
@@ -24,38 +26,7 @@ class ElectricityDocumentController extends Controller
     }
 
     //PRIVATE METHODS
-    /**
-     * handle user's image upload 
-     * @param mixed $imageFile image file - get it from request 
-     * @param int $recordId record id , used to delete old image for this record 
-     * @return string the image file name 
-     */
-    private function uploadImage($imageFile , int $recordId=null):string 
-    {
-        if ($recordId){
-            //delete old image 
-            $oldImageFileName = $this->electriciryProvider->show($recordId)->image; 
-            Storage::disk('public')->delete('electricity/'.$oldImageFileName); 
-        }
-        //store new image
-        $fileName= random_int(0,999).'_'.time().'.'.$imageFile->getClientOriginalExtension(); 
-        $imageFile->storeAs('electricity', $fileName ,'public');
-        //return the new file name 
-        return $fileName;
-    }
-    /**
-     * check if this record belong to the current logeding user or not 
-     * @param int $recordId electricity bill record id 
-     * @return bool true = belong to user | false = NOT belong to user
-     */
-    private function isBelongToUser(int $recordId): bool 
-    {
-        $record = $this->electriciryProvider->show($recordId); 
-        if ($record){
-            return ($record->user_id == auth()->user()->id); 
-        }
-        return false ; 
-    }
+        //
 
     //PUBLIC METHODS
     /**
@@ -101,7 +72,7 @@ class ElectricityDocumentController extends Controller
      * @return mixed back to document index page . route('document.electricity.index')
      */
     public function store(StoreElectrictyRequest $request){
-        $image = $this->uploadImage($request->file('image')); 
+        $image = $this->uploadImage($request->file('image'), 'electricity',  $this->electriciryProvider); 
         $data = $this->electriciryProvider->store([
             'user_id'=>auth()->user()->id,
             'release_date'=>$request->release_date,
@@ -124,7 +95,7 @@ class ElectricityDocumentController extends Controller
         //find record to get path of image perpearing to delete it
         $record = $this->electriciryProvider->show($request->id); 
         //delete image before delete record 
-        if ($record->image && $this->isBelongToUser($request->id)) {
+        if ($record->image && $this->isBelongToUser($request->id , $this->electriciryProvider)) {
             Storage::disk('public')->delete('electricity/'.$record->image); 
             $this->electriciryProvider->destroy($request->id , auth()->user()->id); 
         }
@@ -139,12 +110,12 @@ class ElectricityDocumentController extends Controller
         //get record 
         $record = $this->electriciryProvider->show($request->id); 
         //check if this record belong to the current user 
-        if ($this->isBelongToUser($request->id)){
+        if ($this->isBelongToUser($request->id, $this->electriciryProvider)){
             //view record 
             $record = $this->electriciryProvider->show($request->id); 
             return view('document.electricity.edit' ,['record' =>$record]); 
         }
-        return back(); 
+        return redirect(route('document.electricity.index').'?year'.$request->year); 
     }
     /**
      * update electricity bill action 
@@ -155,7 +126,7 @@ class ElectricityDocumentController extends Controller
         //make sure that is this record belong to current user
         $record = $this->electriciryProvider->show($request->id); 
         //prepearing data 
-        if ($this->isBelongToUser($request->id)){
+        if ($this->isBelongToUser($request->id , $this->electriciryProvider)){
             $data=[
                 'release_date'=>$request->release_date,
                 'consumption'=>$request->consumption,
@@ -167,7 +138,7 @@ class ElectricityDocumentController extends Controller
             $this->electriciryProvider->update($data , $request->id); 
             //upload and update image  
             if ($request->has('image')){
-                $data['image'] = $this->uploadImage($request->file('image') , $request->id); 
+                $data['image'] = $this->uploadImage($request->file('image'), 'electricity' , $this->electriciryProvider, $request->id); 
             }
             //update record in database
             $this->electriciryProvider->update($data ,$request->id); 

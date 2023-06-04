@@ -7,5 +7,6 @@
 "app/constants.php",\
 "app/Providers/RepositoryServiceProvider.php",\
 "app/constants.php",\
-"app/Rules/"\
+"app/Rules/",\
+"app/Helper"\
  -t public/docs

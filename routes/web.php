@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Document\ElectricityDocumentController;
 use App\Http\Controllers\Document\WaterDocumentController;
 use App\Http\Controllers\Profile\ProfileController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,10 +70,14 @@ Route::middleware('auth')->group(function (){
         Route::get('water-document' , [WaterDocumentController::class , 'index'])->name('document.water.index'); 
         Route::get('water-document/create' , [WaterDocumentController::class , 'create'])->name('document.water.create'); 
         Route::post('water-document/store' , [WaterDocumentController::class , 'store'])->name('document.water.store'); 
+        Route::post('water-document/update' , [WaterDocumentController::class , 'update'])->name('document.water.update'); 
+        Route::get('water-document/edit/{id}' , [WaterDocumentController::class , 'edit'])->name('document.water.edit'); 
+        Route::get('water-document/destroy/{id}' , [WaterDocumentController::class , 'destroy'])->name('document.water.destroy'); 
      }) ; 
    });
 }); 
 
 
-Route::get('test', function (){
+Route::get('dd', function (){
+   dd(DB::table('water_bills')->get()); 
 });

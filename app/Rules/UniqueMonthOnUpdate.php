@@ -1,33 +1,39 @@
 <?php
 
-namespace App\Rules\Document\Electricity;
+namespace App\Rules;
 
-use App\Models\Document\ElectricityModel;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Support\Facades\DB;
 
 /**
  * this validation class is for check duplicated month on update with exclude the current month in record 
  */
-class UniqueMonth implements ValidationRule
+class UniqueMonthOnUpdate implements ValidationRule
 {
+    /**
+     * table name
+     */
+    public string $table; 
     /**
      * record id
      */
-    public $id ;
+    public int $id ;
     /**
      * year (from form)
      */ 
-    public $year ;
+    public int $year ;
     /**
      * current logedin user id 
      */
     public $userId;  
     public function __construct(
+        string $table,
         int $id,
         int $year,
         int $userId
     ){
+        $this->table = $table; 
         $this->id = $id; 
         $this->year=$year; 
         $this->userId = $userId; 
@@ -40,10 +46,10 @@ class UniqueMonth implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $record = ElectricityModel::where('id' , $this->id)->where('user_id' , $this->userId)->first();
-        if($record->count()){
+        $record = DB::table($this->table)->where('id' , $this->id)->where('user_id' , $this->userId)->first();
+        if($record){
             if ($record->month != $value){
-                $isMonthExist = ElectricityModel::where('year' , $this->year)->where('user_id',$this->userId)->where('month', $value)->count();
+                $isMonthExist = DB::table($this->table)->where('year' , $this->year)->where('user_id',$this->userId)->where('month', $value)->count();
                 if ($isMonthExist) {
                     $fail('This month " '.MONTHS[$value-1].' " is already paid '); 
                 }

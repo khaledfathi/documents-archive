@@ -5,6 +5,23 @@ use App\Repository\Contracts\Document\ElectricityRepositoryContract;
 use Illuminate\Database\Eloquent\Model;
 
 class ElectriciryRepository implements ElectricityRepositoryContract{
+    //PRIVATE METHODS
+    private  function prepearStatistic(int $year=null , int $userId):object 
+    {
+        $result=[]; 
+        if ($userId && $year){
+            $record = ElectricityModel::where('user_id' , $userId)->where('year', $year); 
+        }elseif($userId){
+            $record = ElectricityModel::where('user_id' , $userId);  
+        }elseif($year){
+            $record = ElectricityModel::where('year', $year); 
+        }else{
+            $record = new ElectricityModel; 
+        }
+        return $record; 
+    }
+
+    //PUBLIC METHODS
     public function index(int $userId=null , int $year=null):object 
     {        
         if ($userId){
@@ -40,20 +57,6 @@ class ElectriciryRepository implements ElectricityRepositoryContract{
         return ($found) ? $found->update($data) : false ; 
     } 
 
-    private  function prepearStatistic(int $year=null , int $userId):object 
-    {
-        $result=[]; 
-        if ($userId && $year){
-            $record = ElectricityModel::where('user_id' , $userId)->where('year', $year); 
-        }elseif($userId){
-            $record = ElectricityModel::where('user_id' , $userId);  
-        }elseif($year){
-            $record = ElectricityModel::where('year', $year); 
-        }else{
-            $record = new ElectricityModel; 
-        }
-        return $record; 
-    }
     public function statisticMin (string $column , int $year=null , $userId=null):float
     {
         $record = $this->prepearStatistic($year , $userId)->select($column)->orderBy($column , 'asc')->first();

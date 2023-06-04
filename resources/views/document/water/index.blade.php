@@ -8,7 +8,7 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item">Documents</li>
-        <li class="breadcrumb-item active"><a href="{{ route('document.water.index') }}">Water Docs</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('document.water.index') }}">Water</a></li>
     </ol>
 @endsection
 
@@ -101,7 +101,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($bills as $bill)
+                                @foreach ($bills as $bill)
                                     <tr>
                                         <td class="align-middle text-center">{{ MONTHS[$bill->month - 1] }} /
                                             {{ $bill->year }}</td>
@@ -109,23 +109,23 @@
                                         <td class="align-middle text-center">{{ $bill->consumption }}</td>
                                         <td class="align-middle text-center">{{ $bill->amount }}</td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ asset('storage/electricity/' . $bill->image) }}">
+                                            <a href="{{ asset('storage/water/' . $bill->image) }}">
                                                 <i class="far fa-image fa-lg" style="color: #1a5fb4;"></i>
                                             </a>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('document.electricity.edit', $bill->id) }}">
+                                            <a href="{{ route('document.water.edit', $bill->id) }}">
                                                 <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
                                             </a>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('document.electricity.destroy', $bill->id) }}">
+                                            <a href="{{ route('document.water.destroy', $bill->id) }}">
                                                 <i class="fas fa-trash-alt fa-lg"
                                                     style="color: #ff0000;cursor:pointer"></i>
                                             </a>
                                         </td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -134,9 +134,9 @@
                             <span class="info-box-icon"><i class="fas fa-faucet fa-lg"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Counsumption</span>
-                                {{-- <span class="info-box-number">Min : {{$consumptionStatistics->min}} KW/H</span>
+                                <span class="info-box-number">Min : {{$consumptionStatistics->min}} KW/H</span>
                                 <span class="info-box-number">Max : {{$consumptionStatistics->max}} KW/H</span>
-                                <span class="info-box-number">Avg : {{$consumptionStatistics->avg}} KW/H</span> --}}
+                                <span class="info-box-number">Avg : {{$consumptionStatistics->avg}} KW/H</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -144,9 +144,9 @@
                             <span class="info-box-icon"><i class="fas fa-dollar-sign fa-lg"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Bil Value</span>
-                                {{-- <span class="info-box-number">Min : {{$amountStatistics->min}} EGP</span>
+                                <span class="info-box-number">Min : {{$amountStatistics->min}} EGP</span>
                                 <span class="info-box-number">Max : {{$amountStatistics->max}} EGP</span>
-                                <span class="info-box-number">Avg : {{$amountStatistics->avg}} EGP</span> --}}
+                                <span class="info-box-number">Avg : {{$amountStatistics->avg}} EGP</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>

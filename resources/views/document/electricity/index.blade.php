@@ -8,7 +8,7 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item">Documents</li>
-        <li class="breadcrumb-item active"><a href="{{ route('document.electricity.index') }}">Electricity Docs</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('document.electricity.index') }}">Electricity</a></li>
     </ol>
 @endsection
 

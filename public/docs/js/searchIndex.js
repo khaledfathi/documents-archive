@@ -396,16 +396,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method___construct"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003AuploadImage\u0028\u0029",
-            "name": "uploadImage",
-            "summary": "handle\u0020user\u0027s\u0020image\u0020upload",
-            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_uploadImage"
-        },                {
-            "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003AisBelongToUser\u0028\u0029",
-            "name": "isBelongToUser",
-            "summary": "check\u0020if\u0020this\u0020record\u0020belong\u0020to\u0020the\u0020current\u0020logeding\u0020user\u0020or\u0020not",
-            "url": "classes/App-Http-Controllers-Document-ElectricityDocumentController.html#method_isBelongToUser"
-        },                {
             "fqsen": "\\App\\Http\\Controllers\\Document\\ElectricityDocumentController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "index\u0020page\u0020of\u0020electricity\u0020documents",
@@ -601,6 +591,91 @@ Search.appendIndex(
             "summary": "current\u0020logedin\u0020user\u0020id",
             "url": "classes/App-Rules-Document-Electricity-UniqueMonth.html#property_userId"
         },                {
+            "fqsen": "\\App\\Helper\\GeneralHelp",
+            "name": "GeneralHelp",
+            "summary": "",
+            "url": "classes/App-Helper-GeneralHelp.html"
+        },                {
+            "fqsen": "\\App\\Helper\\GeneralHelp\u003A\u003AuploadImage\u0028\u0029",
+            "name": "uploadImage",
+            "summary": "handle\u0020user\u0027s\u0020image\u0020upload",
+            "url": "classes/App-Helper-GeneralHelp.html#method_uploadImage"
+        },                {
+            "fqsen": "\\App\\Helper\\GeneralHelp\u003A\u003AisBelongToUser\u0028\u0029",
+            "name": "isBelongToUser",
+            "summary": "check\u0020if\u0020this\u0020record\u0020belong\u0020to\u0020the\u0020current\u0020logeding\u0020user\u0020or\u0020not",
+            "url": "classes/App-Helper-GeneralHelp.html#method_isBelongToUser"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\WaterDocumentController",
+            "name": "WaterDocumentController",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Document-WaterDocumentController.html"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\WaterDocumentController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Document-WaterDocumentController.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\WaterDocumentController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "view\u0020water\u0020bills\u0020page",
+            "url": "classes/App-Http-Controllers-Document-WaterDocumentController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\WaterDocumentController\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "view\u0020create\u0020new\u0020water\u0020bill\u0020page",
+            "url": "classes/App-Http-Controllers-Document-WaterDocumentController.html#method_create"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\WaterDocumentController\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "store\u0020water\u0020bill\u0020in\u0020data\u0020base",
+            "url": "classes/App-Http-Controllers-Document-WaterDocumentController.html#method_store"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Document\\WaterDocumentController\u003A\u003A\u0024waterProvider",
+            "name": "waterProvider",
+            "summary": "Water\u0020Service\u0020Provider\u0020\u005BWater\u0020repository\u005D",
+            "url": "classes/App-Http-Controllers-Document-WaterDocumentController.html#property_waterProvider"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Water\\StoreWaterRequest",
+            "name": "StoreWaterRequest",
+            "summary": "",
+            "url": "classes/App-Http-Requests-Document-Water-StoreWaterRequest.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Water\\StoreWaterRequest\u003A\u003Aauthorize\u0028\u0029",
+            "name": "authorize",
+            "summary": "Determine\u0020if\u0020the\u0020user\u0020is\u0020authorized\u0020to\u0020make\u0020this\u0020request.",
+            "url": "classes/App-Http-Requests-Document-Water-StoreWaterRequest.html#method_authorize"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Water\\StoreWaterRequest\u003A\u003Arules\u0028\u0029",
+            "name": "rules",
+            "summary": "Get\u0020the\u0020validation\u0020rules\u0020that\u0020apply\u0020to\u0020the\u0020request.",
+            "url": "classes/App-Http-Requests-Document-Water-StoreWaterRequest.html#method_rules"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Water\\StoreWaterRequest\u003A\u003Amessages\u0028\u0029",
+            "name": "messages",
+            "summary": "",
+            "url": "classes/App-Http-Requests-Document-Water-StoreWaterRequest.html#method_messages"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\WaterRepositoryContract",
+            "name": "WaterRepositoryContract",
+            "summary": "",
+            "url": "classes/App-Repository-Contracts-Document-WaterRepositoryContract.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Contracts\\Document\\WaterRepositoryContract\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Repository-Contracts-Document-WaterRepositoryContract.html#method_index"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\WaterRepository",
+            "name": "WaterRepository",
+            "summary": "",
+            "url": "classes/App-Repository-Document-WaterRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\Document\\WaterRepository\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Repository-Document-WaterRepository.html#method_index"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -620,6 +695,11 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Helper",
+            "name": "Helper",
+            "summary": "",
+            "url": "namespaces/app-helper.html"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\About",
             "name": "About",
@@ -680,6 +760,11 @@ Search.appendIndex(
             "name": "Requests",
             "summary": "",
             "url": "namespaces/app-http-requests.html"
+        },                {
+            "fqsen": "\\App\\Http\\Requests\\Document\\Water",
+            "name": "Water",
+            "summary": "",
+            "url": "namespaces/app-http-requests-document-water.html"
         },                {
             "fqsen": "\\App\\Http\\Requests\\Profile",
             "name": "Profile",
