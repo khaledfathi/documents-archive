@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'Edit Water Doc')
+@section('title', 'Create gas Doc')
 @section('links', '')
 @section('scripts')
     <script src="{{ asset('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
@@ -9,13 +9,13 @@
         });
     </script>
 @endsection
-@section('sectionName', 'Edit Water Bill ')
+@section('sectionName', 'New Gas Bill ')
 @section('path')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item active">Documents</li>
-        <li class="breadcrumb-item active"><a href="{{ route('document.electricity.index') }}">Water Bill</a></li>
-        <li class="breadcrumb-item active">Edit Bill</li>
+        <li class="breadcrumb-item active"><a href="{{ route('document.gas.index') }}">Gas</a></li>
+        <li class="breadcrumb-item active">New Bill</li>
     </ol>
 @endsection
 
@@ -30,33 +30,32 @@
             @endforeach
         </div>
     @endif
-    <div class="card card-success">
+    <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Edit Water Bill</h3>
+            <h3 class="card-title">Store Gas Bill</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('document.water.update') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('document.gas.store') }}" method="post" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="id" value="{{$record->id}}">
             <div class="card-body d-flex flex-wrap">
                 <div class="form-group col-md-6">
                     <label for="relaseDate">Relase Date</label>
-                    <input type="date" class="form-control" placeholder="Relase Date" name="release_date" required value="{{$record->release_date}}">
+                    <input type="date" class="form-control" placeholder="Relase Date" name="release_date" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="relaseDate">Counsumption M<sup>3</sup></label>
-                    <input type="number" class="form-control" placeholder="Consumption" min=1 name="consumption" required value="{{$record->consumption}}">
+                    <input type="number" class="form-control" placeholder="Consumption" min=1 name="consumption" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="relaseDate">Amount EGP</label>
-                    <input type="number" class="form-control" placeholder="Amount" min=1 name="amount" required value="{{$record->amount}}">
+                    <input type="number" class="form-control" placeholder="Amount" min=1 name="amount" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="exampleInputFile">Bill Image</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile" name="image" >
+                            <input type="file" class="custom-file-input" id="exampleInputFile" name="image" required>
                             <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                         </div>
                     </div>
@@ -67,8 +66,8 @@
                     <label>Month</label>
                     <select class="form-control" name="month" required>
                         @foreach (MONTHS as $month)
-                            @if ($record->month == $loop->index+1)
-                                <option selected value="{{ $loop->index+1}}">{{ $month }}</option>
+                            @if (CURRENT_MONTH == $loop->index + 1)
+                                <option selected value="{{ $loop->index + 1 }}">{{ $month }}</option>
                             @else
                                 <option value="{{ $loop->index + 1 }}">{{ $month }}</option>
                             @endif
@@ -80,19 +79,19 @@
                 <div class="form-group col-md-6">
                     <label for="relaseDate">year</label>
                     <input type="number" class="form-control" placeholder="Year" min=1900 name="year"
-                        value="{{ $record->year }}" required>
+                        value="{{ CURRENT_YEAR }}" required>
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="exampleInputFile">Notes</label>
-                    <textarea class="form-control w-100 h-100" style="resize:none;" placeholder="Notes" name="notes">{{$record->notes}}</textarea>
+                    <textarea class="form-control w-100 h-100" style="resize:none;" placeholder="Notes" name="notes"></textarea>
                 </div>
             </div>
             <!-- /.card-body -->
 
             <div class="card-footer col-12">
-                <button type="submit" class="btn btn-success">Submit</button>
-                <a href="{{route('document.water.index').'?year='.$record->year}}" class="btn btn-danger">Cancle</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{route('document.gas.index').'?year='.CURRENT_YEAR }}" class="btn btn-danger">Cancle</a>
             </div>
         </form>
     </div>

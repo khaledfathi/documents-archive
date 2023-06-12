@@ -1,38 +1,38 @@
 <?php 
-namespace App\Repository\Contracts\Document;
+namespace App\Repository\Contracts\Document; 
 
-interface WaterRepositoryContract {
+interface GasRepositoryContract{
     /**
-     * show index of all water bill for specific user
-     * @param int $userId user id to get his water bills 
+     * show index of all gas bill for specific user
+     * @param int $userId user id to get his gas bills 
      * @param int $year filter result to show bills of this year
-     * @return object object electricity bills from database 
+     * @return object object gas bills from database 
      */
     public function index(int $userId=null , int $year=null):object ; 
     /**
-     * show water bill by id 
-     * @param int $id water bill id 
-     * @return object|null return water bill | null 
-     */
-    public function show ($id):object | null ;
-    /**
-     * show index of all water bill for specific user
+     * show index of all gas bill for specific user
      * @param array $data associative array for data to store , keys should be identical to database coulms 
      * @return object opject or the stored record  
      */
     public function store(array $data):object; 
     /**
-     * destroy water bill by id  
-     * @param int $id id of water bill 
-     * @param int $userId use this user id to destroy water bill belong to this user
+     * destroy gas bill by id  
+     * @param int $id id of gas bill 
+     * @param int $userId use this user id to destroy gas bill belong to this user
      * @return bool true for success | false for fail
      */
     public function destroy(int $id , int $userId=null):bool; 
     /**
-     * update water bill 
+     * show gas bill by id 
+     * @param int $id gas bill id 
+     * @return object|null return gas bill | null 
+     */
+    public function show ($id):object | null ;
+    /**
+     * update gas bill 
      * @param array $data arry of data needed for update this record 
      * @param int $id id of record to be update
-     * @return object|null return water bill | null 
+     * @return object|null return gas bill | null 
      */
     public function update(array $data , int $id): bool; 
     /**
@@ -59,6 +59,5 @@ interface WaterRepositoryContract {
      * @return float avgerage  value 
      */
     public function statisticAvg (string $column , int $year=null , $userId=null ):float; 
-
 
 }

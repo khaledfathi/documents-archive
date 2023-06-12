@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CP\User\UserController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Document\ElectricityDocumentController;
+use App\Http\Controllers\Document\GasDocumentController;
 use App\Http\Controllers\Document\WaterDocumentController;
 use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Support\Facades\DB;
@@ -74,6 +75,15 @@ Route::middleware('auth')->group(function (){
         Route::get('water-document/edit/{id}' , [WaterDocumentController::class , 'edit'])->name('document.water.edit'); 
         Route::get('water-document/destroy/{id}' , [WaterDocumentController::class , 'destroy'])->name('document.water.destroy'); 
      }) ; 
+     //Gas
+     Route::group(['prefix'=>'gas'] , function (){
+         Route::get('' , [GasDocumentController::class , 'index'])->name('document.gas.index'); 
+         Route::get('gas-document/create' , [GasDocumentController::class , 'create'])->name('document.gas.create'); 
+         Route::post('gas-document/store' , [GasDocumentController::class , 'store'])->name('document.gas.store');
+         Route::get('gas-document/edit/{id}' , [GasDocumentController::class , 'edit'])->name('document.gas.edit'); 
+         Route::post('gas-document/update' , [GasDocumentController::class , 'update'])->name('document.gas.update'); 
+         Route::get('gas-document/destroy/{id}' , [GasDocumentController::class , 'destroy'])->name('document.gas.destroy'); 
+     }); 
    });
 }); 
 

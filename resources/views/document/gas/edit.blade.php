@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'Edit Water Doc')
+@section('title', 'Edit Gas Doc')
 @section('links', '')
 @section('scripts')
     <script src="{{ asset('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
@@ -9,12 +9,12 @@
         });
     </script>
 @endsection
-@section('sectionName', 'Edit Water Bill ')
+@section('sectionName', 'Edit Gas Bill ')
 @section('path')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item active">Documents</li>
-        <li class="breadcrumb-item active"><a href="{{ route('document.electricity.index') }}">Water Bill</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('document.gas.index') }}">Gas Bill</a></li>
         <li class="breadcrumb-item active">Edit Bill</li>
     </ol>
 @endsection
@@ -32,11 +32,11 @@
     @endif
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Edit Water Bill</h3>
+            <h3 class="card-title">Edit Gas Bill</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('document.water.update') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('document.gas.update') }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{$record->id}}">
             <div class="card-body d-flex flex-wrap">
@@ -92,7 +92,7 @@
 
             <div class="card-footer col-12">
                 <button type="submit" class="btn btn-success">Submit</button>
-                <a href="{{route('document.water.index').'?year='.$record->year}}" class="btn btn-danger">Cancle</a>
+                <a href="{{route('document.gas.index').'?year='.$record->year}}" class="btn btn-danger">Cancle</a>
             </div>
         </form>
     </div>

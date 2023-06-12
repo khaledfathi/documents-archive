@@ -55,14 +55,14 @@ class WaterDocumentController extends Controller
     /**
      * view create new water bill page 
      * @param Request $requset client request
-     * @return mixed view of createing new bill page 
+     * @return mixed view of createing new water bill page 
      */
     public function create(Request $request){
         return  view ('document.water.create'); 
     }
     /**
      * store water bill in data base 
-     * @param Request $request client request - get the data to be store
+     * @param StoreWaterRequest $request client request - get the data to be store
      * @return mixed redirect to water index page with last year value in request  
      */
     public function store (StoreWaterRequest $request){

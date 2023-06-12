@@ -1,20 +1,20 @@
 @extends('layout.main')
-@section('title', 'Water-Docs')
+@section('title', 'gas-Docs')
 @section('links', '')
 @section('scripts', '')
 @section('styles', '')
-@section('sectionName', 'Water')
+@section('sectionName', 'Gas')
 @section('path')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('root') }}">Home</a></li>
         <li class="breadcrumb-item">Documents</li>
-        <li class="breadcrumb-item active"><a href="{{ route('document.water.index') }}">Water</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('document.gas.index') }}">Gas</a></li>
     </ol>
 @endsection
 
 @section('content')
     <div class="col d-block m-3">
-        <a href="{{ route('document.water.create') }}" class="btn btn-block btn-primary btn-lg  col-2 "
+        <a href="{{ route('document.gas.create') }}" class="btn btn-block btn-primary btn-lg  col-2 "
             style="min-width:120px">
             New Bill</a>
     </div>
@@ -28,12 +28,12 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Water Bills for year {{ $currentYear }}</h3>
+            <h3 class="card-title">Gas Bills for year {{ $currentYear }}</h3>
         </div>
         <!-- /.card-header -->
         {{-- find year --}}
         <div class="col-md-4 mt-3 mx-auto">
-            <form action="{{ route('document.water.index') }}">
+            <form action="{{ route('document.gas.index') }}">
                 <div class="input-group">
                     <input type="number" class="form-control form-control-lg" placeholder="Type the year" min=1900 max=9999
                         name="year" value="{{ $currentYear }}">
@@ -41,7 +41,7 @@
                         <button type="submit" class="btn btn-lg btn-default">
                             <i class="fa fa-search"></i>
                         </button>
-                        <a href="{{ route('document.water.index') . '?year=' . CURRENT_YEAR }}"
+                        <a href="{{ route('document.gas.index') . '?year=' . CURRENT_YEAR }}"
                             class="btn btn-lg btn-default ml-3">
                             {{ CURRENT_YEAR }}
                         </a>
@@ -109,17 +109,17 @@
                                         <td class="align-middle text-center">{{ $bill->consumption }}</td>
                                         <td class="align-middle text-center">{{ $bill->amount }}</td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ asset('storage/water/' . $bill->image) }}">
+                                            <a href="{{ asset('storage/gas/' . $bill->image) }}">
                                                 <i class="far fa-image fa-lg" style="color: #1a5fb4;"></i>
                                             </a>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('document.water.edit', $bill->id) }}">
+                                            <a href="{{ route('document.gas.edit', $bill->id) }}">
                                                 <i class="fas fa-edit fa-lg" style="color: #005eff;cursor:pointer;"></i>
                                             </a>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('document.water.destroy', $bill->id) }}">
+                                            <a href="{{ route('document.gas.destroy', $bill->id) }}">
                                                 <i class="fas fa-trash-alt fa-lg"
                                                     style="color: #ff0000;cursor:pointer"></i>
                                             </a>
@@ -136,7 +136,7 @@
         <!-- /.card-body -->
         <div class="d-flex flex-row flex-wrap col-12 justify-content-center flex-wrap">
             <div class="info-box mb-3 bg-info mx-2 col-5" style="min-width:300px">
-                <span class="info-box-icon"><i class="fas fa-faucet fa-lg"></i></span>
+                <span class="info-box-icon"><i class="fab fa-gripfire fa-lg"></i></span>
                 <div class="info-box-content">
                     <span class="info-box-text" style="font-weight:bold;font-size:13pt;">Counsumption</span>
                     <span class="info-box-number">Min : {{ $consumptionStatistics->min }} KW/H</span>
